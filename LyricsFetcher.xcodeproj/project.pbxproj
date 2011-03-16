@@ -10,7 +10,6 @@
 		FD20F758133154C0005997D1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD20F757133154C0005997D1 /* Cocoa.framework */; };
 		FD20F762133154C0005997D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD20F760133154C0005997D1 /* InfoPlist.strings */; };
 		FD20F765133154C0005997D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD20F764133154C0005997D1 /* main.m */; };
-		FD20F768133154C0005997D1 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FD20F766133154C0005997D1 /* Credits.rtf */; };
 		FD20F76B133154C0005997D1 /* LyricsFetcherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD20F76A133154C0005997D1 /* LyricsFetcherAppDelegate.m */; };
 		FD20F76E133154C0005997D1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD20F76C133154C0005997D1 /* MainMenu.xib */; };
 		FD20F771133154C0005997D1 /* LyricsFetcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD20F76F133154C0005997D1 /* LyricsFetcher.xcdatamodeld */; };
@@ -40,7 +39,6 @@
 		FD20F761133154C0005997D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FD20F763133154C0005997D1 /* LyricsFetcher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LyricsFetcher-Prefix.pch"; sourceTree = "<group>"; };
 		FD20F764133154C0005997D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FD20F767133154C0005997D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		FD20F769133154C0005997D1 /* LyricsFetcherAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LyricsFetcherAppDelegate.h; sourceTree = "<group>"; };
 		FD20F76A133154C0005997D1 /* LyricsFetcherAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LyricsFetcherAppDelegate.m; sourceTree = "<group>"; };
 		FD20F76D133154C0005997D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				FD20F760133154C0005997D1 /* InfoPlist.strings */,
 				FD20F763133154C0005997D1 /* LyricsFetcher-Prefix.pch */,
 				FD20F764133154C0005997D1 /* main.m */,
-				FD20F766133154C0005997D1 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -226,7 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD20F762133154C0005997D1 /* InfoPlist.strings in Resources */,
-				FD20F768133154C0005997D1 /* Credits.rtf in Resources */,
 				FD20F76E133154C0005997D1 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,14 +292,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		FD20F766133154C0005997D1 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD20F767133154C0005997D1 /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
 		FD20F76C133154C0005997D1 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,6 +350,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LyricsFetcher/LyricsFetcher-Prefix.pch";
 				INFOPLIST_FILE = "LyricsFetcher/LyricsFetcher-Info.plist";
@@ -377,6 +366,7 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LyricsFetcher/LyricsFetcher-Prefix.pch";
 				INFOPLIST_FILE = "LyricsFetcher/LyricsFetcher-Info.plist";
@@ -448,6 +438,7 @@
 				FD20F78A133154C1005997D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD20F78B133154C1005997D1 /* Build configuration list for PBXNativeTarget "LyricsFetcherTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +447,7 @@
 				FD20F78D133154C1005997D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -1,27 +1,16 @@
-//
-//  LyricsFetcherAppDelegate.h
-//  LyricsFetcher
-//
-//  Created by Илья Волков on 3/16/11.
-//  Copyright 2011 Apple Computer Inc. All rights reserved.
-//
-
 #import <Cocoa/Cocoa.h>
 
 @interface LyricsFetcherAppDelegate : NSObject <NSApplicationDelegate> {
 @private
-    NSWindow *window;
-    NSPersistentStoreCoordinator *__persistentStoreCoordinator;
-    NSManagedObjectModel *__managedObjectModel;
-    NSManagedObjectContext *__managedObjectContext;
+    NSPersistentStoreCoordinator *persistentStoreCoordinator;
+    NSManagedObjectModel *managedObjectModel;
+    NSManagedObjectContext *managedObjectContext;
 }
 
-@property (assign) IBOutlet NSWindow *window;
+@property IBOutlet NSWindow *window;
 
-@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
-
-- (IBAction)saveAction:sender;
+@property (nonatomic, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 
 @end
