@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD20F758133154C0005997D1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD20F757133154C0005997D1 /* Cocoa.framework */; };
+		FD20F762133154C0005997D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD20F760133154C0005997D1 /* InfoPlist.strings */; };
+		FD20F765133154C0005997D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD20F764133154C0005997D1 /* main.m */; };
+		FD20F768133154C0005997D1 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FD20F766133154C0005997D1 /* Credits.rtf */; };
+		FD20F76B133154C0005997D1 /* LyricsFetcherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD20F76A133154C0005997D1 /* LyricsFetcherAppDelegate.m */; };
+		FD20F76E133154C0005997D1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD20F76C133154C0005997D1 /* MainMenu.xib */; };
+		FD20F771133154C0005997D1 /* LyricsFetcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD20F76F133154C0005997D1 /* LyricsFetcher.xcdatamodeld */; };
+		FD20F778133154C0005997D1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD20F757133154C0005997D1 /* Cocoa.framework */; };
+		FD20F780133154C0005997D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD20F77E133154C0005997D1 /* InfoPlist.strings */; };
+		FD20F783133154C0005997D1 /* LyricsFetcherTests.h in Resources */ = {isa = PBXBuildFile; fileRef = FD20F782133154C0005997D1 /* LyricsFetcherTests.h */; };
+		FD20F785133154C1005997D1 /* LyricsFetcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD20F784133154C1005997D1 /* LyricsFetcherTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD20F779133154C0005997D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD20F74A133154C0005997D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD20F752133154C0005997D1;
+			remoteInfo = LyricsFetcher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FD20F753133154C0005997D1 /* LyricsFetcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LyricsFetcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD20F757133154C0005997D1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		FD20F75A133154C0005997D1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		FD20F75B133154C0005997D1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FD20F75C133154C0005997D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FD20F75F133154C0005997D1 /* LyricsFetcher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LyricsFetcher-Info.plist"; sourceTree = "<group>"; };
+		FD20F761133154C0005997D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FD20F763133154C0005997D1 /* LyricsFetcher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LyricsFetcher-Prefix.pch"; sourceTree = "<group>"; };
+		FD20F764133154C0005997D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FD20F767133154C0005997D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		FD20F769133154C0005997D1 /* LyricsFetcherAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LyricsFetcherAppDelegate.h; sourceTree = "<group>"; };
+		FD20F76A133154C0005997D1 /* LyricsFetcherAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LyricsFetcherAppDelegate.m; sourceTree = "<group>"; };
+		FD20F76D133154C0005997D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FD20F770133154C0005997D1 /* LyricsFetcher.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LyricsFetcher.xcdatamodel; sourceTree = "<group>"; };
+		FD20F777133154C0005997D1 /* LyricsFetcherTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LyricsFetcherTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD20F77D133154C0005997D1 /* LyricsFetcherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LyricsFetcherTests-Info.plist"; sourceTree = "<group>"; };
+		FD20F77F133154C0005997D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FD20F781133154C0005997D1 /* LyricsFetcherTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LyricsFetcherTests-Prefix.pch"; sourceTree = "<group>"; };
+		FD20F782133154C0005997D1 /* LyricsFetcherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LyricsFetcherTests.h; sourceTree = "<group>"; };
+		FD20F784133154C1005997D1 /* LyricsFetcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LyricsFetcherTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD20F750133154C0005997D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD20F758133154C0005997D1 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD20F773133154C0005997D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD20F778133154C0005997D1 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD20F748133154C0005997D1 = {
+			isa = PBXGroup;
+			children = (
+				FD20F75D133154C0005997D1 /* LyricsFetcher */,
+				FD20F77B133154C0005997D1 /* LyricsFetcherTests */,
+				FD20F756133154C0005997D1 /* Frameworks */,
+				FD20F754133154C0005997D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD20F754133154C0005997D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD20F753133154C0005997D1 /* LyricsFetcher.app */,
+				FD20F777133154C0005997D1 /* LyricsFetcherTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD20F756133154C0005997D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD20F757133154C0005997D1 /* Cocoa.framework */,
+				FD20F759133154C0005997D1 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD20F759133154C0005997D1 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD20F75A133154C0005997D1 /* AppKit.framework */,
+				FD20F75B133154C0005997D1 /* CoreData.framework */,
+				FD20F75C133154C0005997D1 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		FD20F75D133154C0005997D1 /* LyricsFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				FD20F769133154C0005997D1 /* LyricsFetcherAppDelegate.h */,
+				FD20F76A133154C0005997D1 /* LyricsFetcherAppDelegate.m */,
+				FD20F76C133154C0005997D1 /* MainMenu.xib */,
+				FD20F76F133154C0005997D1 /* LyricsFetcher.xcdatamodeld */,
+				FD20F75E133154C0005997D1 /* Supporting Files */,
+			);
+			path = LyricsFetcher;
+			sourceTree = "<group>";
+		};
+		FD20F75E133154C0005997D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD20F75F133154C0005997D1 /* LyricsFetcher-Info.plist */,
+				FD20F760133154C0005997D1 /* InfoPlist.strings */,
+				FD20F763133154C0005997D1 /* LyricsFetcher-Prefix.pch */,
+				FD20F764133154C0005997D1 /* main.m */,
+				FD20F766133154C0005997D1 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD20F77B133154C0005997D1 /* LyricsFetcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD20F782133154C0005997D1 /* LyricsFetcherTests.h */,
+				FD20F784133154C1005997D1 /* LyricsFetcherTests.m */,
+				FD20F77C133154C0005997D1 /* Supporting Files */,
+			);
+			path = LyricsFetcherTests;
+			sourceTree = "<group>";
+		};
+		FD20F77C133154C0005997D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD20F77D133154C0005997D1 /* LyricsFetcherTests-Info.plist */,
+				FD20F77E133154C0005997D1 /* InfoPlist.strings */,
+				FD20F781133154C0005997D1 /* LyricsFetcherTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD20F752133154C0005997D1 /* LyricsFetcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD20F788133154C1005997D1 /* Build configuration list for PBXNativeTarget "LyricsFetcher" */;
+			buildPhases = (
+				FD20F74F133154C0005997D1 /* Sources */,
+				FD20F750133154C0005997D1 /* Frameworks */,
+				FD20F751133154C0005997D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LyricsFetcher;
+			productName = LyricsFetcher;
+			productReference = FD20F753133154C0005997D1 /* LyricsFetcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FD20F776133154C0005997D1 /* LyricsFetcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD20F78B133154C1005997D1 /* Build configuration list for PBXNativeTarget "LyricsFetcherTests" */;
+			buildPhases = (
+				FD20F772133154C0005997D1 /* Sources */,
+				FD20F773133154C0005997D1 /* Frameworks */,
+				FD20F774133154C0005997D1 /* Resources */,
+				FD20F775133154C0005997D1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD20F77A133154C0005997D1 /* PBXTargetDependency */,
+			);
+			name = LyricsFetcherTests;
+			productName = LyricsFetcherTests;
+			productReference = FD20F777133154C0005997D1 /* LyricsFetcherTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD20F74A133154C0005997D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Apple Computer Inc";
+			};
+			buildConfigurationList = FD20F74D133154C0005997D1 /* Build configuration list for PBXProject "LyricsFetcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FD20F748133154C0005997D1;
+			productRefGroup = FD20F754133154C0005997D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD20F752133154C0005997D1 /* LyricsFetcher */,
+				FD20F776133154C0005997D1 /* LyricsFetcherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD20F751133154C0005997D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD20F762133154C0005997D1 /* InfoPlist.strings in Resources */,
+				FD20F768133154C0005997D1 /* Credits.rtf in Resources */,
+				FD20F76E133154C0005997D1 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD20F774133154C0005997D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD20F780133154C0005997D1 /* InfoPlist.strings in Resources */,
+				FD20F783133154C0005997D1 /* LyricsFetcherTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FD20F775133154C0005997D1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD20F74F133154C0005997D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD20F765133154C0005997D1 /* main.m in Sources */,
+				FD20F76B133154C0005997D1 /* LyricsFetcherAppDelegate.m in Sources */,
+				FD20F771133154C0005997D1 /* LyricsFetcher.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD20F772133154C0005997D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD20F785133154C1005997D1 /* LyricsFetcherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD20F77A133154C0005997D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD20F752133154C0005997D1 /* LyricsFetcher */;
+			targetProxy = FD20F779133154C0005997D1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD20F760133154C0005997D1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD20F761133154C0005997D1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FD20F766133154C0005997D1 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD20F767133154C0005997D1 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		FD20F76C133154C0005997D1 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD20F76D133154C0005997D1 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		FD20F77E133154C0005997D1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD20F77F133154C0005997D1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD20F786133154C1005997D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FD20F787133154C1005997D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FD20F789133154C1005997D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LyricsFetcher/LyricsFetcher-Prefix.pch";
+				INFOPLIST_FILE = "LyricsFetcher/LyricsFetcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FD20F78A133154C1005997D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LyricsFetcher/LyricsFetcher-Prefix.pch";
+				INFOPLIST_FILE = "LyricsFetcher/LyricsFetcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FD20F78C133154C1005997D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LyricsFetcher.app/Contents/MacOS/LyricsFetcher";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LyricsFetcherTests/LyricsFetcherTests-Prefix.pch";
+				INFOPLIST_FILE = "LyricsFetcherTests/LyricsFetcherTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FD20F78D133154C1005997D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LyricsFetcher.app/Contents/MacOS/LyricsFetcher";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LyricsFetcherTests/LyricsFetcherTests-Prefix.pch";
+				INFOPLIST_FILE = "LyricsFetcherTests/LyricsFetcherTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD20F74D133154C0005997D1 /* Build configuration list for PBXProject "LyricsFetcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD20F786133154C1005997D1 /* Debug */,
+				FD20F787133154C1005997D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD20F788133154C1005997D1 /* Build configuration list for PBXNativeTarget "LyricsFetcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD20F789133154C1005997D1 /* Debug */,
+				FD20F78A133154C1005997D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FD20F78B133154C1005997D1 /* Build configuration list for PBXNativeTarget "LyricsFetcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD20F78C133154C1005997D1 /* Debug */,
+				FD20F78D133154C1005997D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FD20F76F133154C0005997D1 /* LyricsFetcher.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FD20F770133154C0005997D1 /* LyricsFetcher.xcdatamodel */,
+			);
+			currentVersion = FD20F770133154C0005997D1 /* LyricsFetcher.xcdatamodel */;
+			path = LyricsFetcher.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FD20F74A133154C0005997D1 /* Project object */;
+}

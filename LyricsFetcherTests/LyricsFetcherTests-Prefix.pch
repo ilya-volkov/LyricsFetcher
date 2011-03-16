@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'LyricsFetcherTests' target in the 'LyricsFetcherTests' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
