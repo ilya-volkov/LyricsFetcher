@@ -1,16 +1,20 @@
 #import <Cocoa/Cocoa.h>
 
-@interface LyricsFetcherAppDelegate : NSObject <NSApplicationDelegate> {
-@private
-    NSPersistentStoreCoordinator *persistentStoreCoordinator;
-    NSManagedObjectModel *managedObjectModel;
-    NSManagedObjectContext *managedObjectContext;
-}
+@class PersistentStorageProvider;
 
-@property IBOutlet NSWindow *window;
+@interface LyricsFetcherAppDelegate : NSObject <NSApplicationDelegate>
 
-@property (nonatomic, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (nonatomic, readonly) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+- (IBAction)showAboutWindow:(id)sender;
+- (IBAction)showLyricsWindow:(id)sender;
+
+@property IBOutlet NSWindow *lyricsWindow;
+@property IBOutlet NSWindow *aboutWindow;
+@property IBOutlet NSTextField *appName;
+@property IBOutlet NSTextField *version;
+@property IBOutlet NSTextField *copyright;
+@property IBOutlet NSMenu *menu;
+
+@property NSStatusItem *statusBarItem;
+@property PersistentStorageProvider *persistentStorageProvider;
 
 @end

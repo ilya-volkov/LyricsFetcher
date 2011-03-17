@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string></string>
+	<string>lyricsFetcherMain.png</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.ilyavolkov.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -26,9 +26,13 @@
 	<string>public.app-category.music</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2011 Ilya Volkov</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>LSUIElement</key>
+	<true/>
 </dict>
 </plist>

@@ -17,6 +17,15 @@
 		FD20F780133154C0005997D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD20F77E133154C0005997D1 /* InfoPlist.strings */; };
 		FD20F783133154C0005997D1 /* LyricsFetcherTests.h in Resources */ = {isa = PBXBuildFile; fileRef = FD20F782133154C0005997D1 /* LyricsFetcherTests.h */; };
 		FD20F785133154C1005997D1 /* LyricsFetcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD20F784133154C1005997D1 /* LyricsFetcherTests.m */; };
+		FD20F7D813327B60005997D1 /* PersistentStorageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD20F7D713327B60005997D1 /* PersistentStorageProvider.m */; };
+		FD20F7DA13327FF1005997D1 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD20F7D913327FF1005997D1 /* ScriptingBridge.framework */; };
+		FD20F7DD13329539005997D1 /* lyricsFetcherMain.png in Resources */ = {isa = PBXBuildFile; fileRef = FD20F7DB13329539005997D1 /* lyricsFetcherMain.png */; };
+		FD20F7DE13329539005997D1 /* lyricsFetcherStatus.png in Resources */ = {isa = PBXBuildFile; fileRef = FD20F7DC13329539005997D1 /* lyricsFetcherStatus.png */; };
+		FD62FA5113329E5500E06A81 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5013329E5500E06A81 /* NSArray+Extensions.m */; };
+		FD62FA5813329E7100E06A81 /* iTunesController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5413329E7100E06A81 /* iTunesController.m */; };
+		FD62FA5913329E7100E06A81 /* TrackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5713329E7100E06A81 /* TrackInfo.m */; };
+		FD62FA5E13329E9800E06A81 /* ChartLyricsLyricsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5B13329E9800E06A81 /* ChartLyricsLyricsProvider.m */; };
+		FD62FA5F13329E9800E06A81 /* SearchLyricsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5D13329E9800E06A81 /* SearchLyricsResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,23 @@
 		FD20F781133154C0005997D1 /* LyricsFetcherTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LyricsFetcherTests-Prefix.pch"; sourceTree = "<group>"; };
 		FD20F782133154C0005997D1 /* LyricsFetcherTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LyricsFetcherTests.h; sourceTree = "<group>"; };
 		FD20F784133154C1005997D1 /* LyricsFetcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LyricsFetcherTests.m; sourceTree = "<group>"; };
+		FD20F7D613327B5F005997D1 /* PersistentStorageProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistentStorageProvider.h; sourceTree = "<group>"; };
+		FD20F7D713327B60005997D1 /* PersistentStorageProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistentStorageProvider.m; sourceTree = "<group>"; };
+		FD20F7D913327FF1005997D1 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		FD20F7DB13329539005997D1 /* lyricsFetcherMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lyricsFetcherMain.png; sourceTree = "<group>"; };
+		FD20F7DC13329539005997D1 /* lyricsFetcherStatus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lyricsFetcherStatus.png; sourceTree = "<group>"; };
+		FD62FA4F13329E5500E06A81 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
+		FD62FA5013329E5500E06A81 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
+		FD62FA5213329E7100E06A81 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		FD62FA5313329E7100E06A81 /* iTunesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesController.h; sourceTree = "<group>"; };
+		FD62FA5413329E7100E06A81 /* iTunesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesController.m; sourceTree = "<group>"; };
+		FD62FA5513329E7100E06A81 /* iTunesControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesControllerDelegate.h; sourceTree = "<group>"; };
+		FD62FA5613329E7100E06A81 /* TrackInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackInfo.h; sourceTree = "<group>"; };
+		FD62FA5713329E7100E06A81 /* TrackInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackInfo.m; sourceTree = "<group>"; };
+		FD62FA5A13329E9800E06A81 /* ChartLyricsLyricsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartLyricsLyricsProvider.h; sourceTree = "<group>"; };
+		FD62FA5B13329E9800E06A81 /* ChartLyricsLyricsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartLyricsLyricsProvider.m; sourceTree = "<group>"; };
+		FD62FA5C13329E9800E06A81 /* SearchLyricsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchLyricsResult.h; sourceTree = "<group>"; };
+		FD62FA5D13329E9800E06A81 /* SearchLyricsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchLyricsResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD20F7DA13327FF1005997D1 /* ScriptingBridge.framework in Frameworks */,
 				FD20F758133154C0005997D1 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +120,7 @@
 		FD20F756133154C0005997D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD20F7D913327FF1005997D1 /* ScriptingBridge.framework */,
 				FD20F757133154C0005997D1 /* Cocoa.framework */,
 				FD20F759133154C0005997D1 /* Other Frameworks */,
 			);
@@ -112,11 +140,16 @@
 		FD20F75D133154C0005997D1 /* LyricsFetcher */ = {
 			isa = PBXGroup;
 			children = (
+				FD20F7C913326F33005997D1 /* LyricsProvider */,
+				FD20F7C813326ED4005997D1 /* iTunesController */,
+				FD20F7C713326EB9005997D1 /* Common */,
 				FD20F769133154C0005997D1 /* LyricsFetcherAppDelegate.h */,
 				FD20F76A133154C0005997D1 /* LyricsFetcherAppDelegate.m */,
+				FD20F7D613327B5F005997D1 /* PersistentStorageProvider.h */,
+				FD20F7D713327B60005997D1 /* PersistentStorageProvider.m */,
+				FD20F75E133154C0005997D1 /* Supporting Files */,
 				FD20F76C133154C0005997D1 /* MainMenu.xib */,
 				FD20F76F133154C0005997D1 /* LyricsFetcher.xcdatamodeld */,
-				FD20F75E133154C0005997D1 /* Supporting Files */,
 			);
 			path = LyricsFetcher;
 			sourceTree = "<group>";
@@ -124,6 +157,8 @@
 		FD20F75E133154C0005997D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FD20F7DB13329539005997D1 /* lyricsFetcherMain.png */,
+				FD20F7DC13329539005997D1 /* lyricsFetcherStatus.png */,
 				FD20F75F133154C0005997D1 /* LyricsFetcher-Info.plist */,
 				FD20F760133154C0005997D1 /* InfoPlist.strings */,
 				FD20F763133154C0005997D1 /* LyricsFetcher-Prefix.pch */,
@@ -150,6 +185,42 @@
 				FD20F781133154C0005997D1 /* LyricsFetcherTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD20F7C713326EB9005997D1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FD62FA4F13329E5500E06A81 /* NSArray+Extensions.h */,
+				FD62FA5013329E5500E06A81 /* NSArray+Extensions.m */,
+			);
+			name = Common;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		FD20F7C813326ED4005997D1 /* iTunesController */ = {
+			isa = PBXGroup;
+			children = (
+				FD62FA5213329E7100E06A81 /* iTunes.h */,
+				FD62FA5313329E7100E06A81 /* iTunesController.h */,
+				FD62FA5413329E7100E06A81 /* iTunesController.m */,
+				FD62FA5513329E7100E06A81 /* iTunesControllerDelegate.h */,
+				FD62FA5613329E7100E06A81 /* TrackInfo.h */,
+				FD62FA5713329E7100E06A81 /* TrackInfo.m */,
+			);
+			name = iTunesController;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		FD20F7C913326F33005997D1 /* LyricsProvider */ = {
+			isa = PBXGroup;
+			children = (
+				FD62FA5A13329E9800E06A81 /* ChartLyricsLyricsProvider.h */,
+				FD62FA5B13329E9800E06A81 /* ChartLyricsLyricsProvider.m */,
+				FD62FA5C13329E9800E06A81 /* SearchLyricsResult.h */,
+				FD62FA5D13329E9800E06A81 /* SearchLyricsResult.m */,
+			);
+			name = LyricsProvider;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +295,8 @@
 			files = (
 				FD20F762133154C0005997D1 /* InfoPlist.strings in Resources */,
 				FD20F76E133154C0005997D1 /* MainMenu.xib in Resources */,
+				FD20F7DD13329539005997D1 /* lyricsFetcherMain.png in Resources */,
+				FD20F7DE13329539005997D1 /* lyricsFetcherStatus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +335,12 @@
 				FD20F765133154C0005997D1 /* main.m in Sources */,
 				FD20F76B133154C0005997D1 /* LyricsFetcherAppDelegate.m in Sources */,
 				FD20F771133154C0005997D1 /* LyricsFetcher.xcdatamodeld in Sources */,
+				FD20F7D813327B60005997D1 /* PersistentStorageProvider.m in Sources */,
+				FD62FA5113329E5500E06A81 /* NSArray+Extensions.m in Sources */,
+				FD62FA5813329E7100E06A81 /* iTunesController.m in Sources */,
+				FD62FA5913329E7100E06A81 /* TrackInfo.m in Sources */,
+				FD62FA5E13329E9800E06A81 /* ChartLyricsLyricsProvider.m in Sources */,
+				FD62FA5F13329E9800E06A81 /* SearchLyricsResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

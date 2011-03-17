@@ -1,109 +1,58 @@
 #import "LyricsFetcherAppDelegate.h"
+#import "PersistentStorageProvider.h"
 
 @implementation LyricsFetcherAppDelegate
 
-@synthesize window;
+@synthesize lyricsWindow;
+@synthesize aboutWindow;
+@synthesize appName;
+@synthesize version;
+@synthesize copyright;
+@synthesize menu;
+@synthesize statusBarItem;
+@synthesize persistentStorageProvider;
+
+- (void)dataBindAboutWindow {
+    NSBundle *bundle = [NSBundle mainBundle];
+    [appName setStringValue:[bundle objectForInfoDictionaryKey:@"CFBundleName"]];
+    
+    [version setStringValue:[NSString stringWithFormat:@"%@ (%@)",
+        [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
+        [bundle objectForInfoDictionaryKey:@"CFBundleVersion"]
+    ]];
+    
+    [copyright setStringValue:[bundle objectForInfoDictionaryKey:@"NSHumanReadableCopyright"]];
+}
+
+- (void) createStatusBarItem {
+	self.statusBarItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+	if (self.statusBarItem != nil) {
+		[self.statusBarItem setMenu:self.menu];
+		[self.statusBarItem setImage:[NSImage imageNamed:@"lyricsFetcherStatus.png"]];
+		[self.statusBarItem setHighlightMode:YES];
+	}
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    self.persistentStorageProvider = [PersistentStorageProvider new];
+    
+    [self dataBindAboutWindow];
+    [self createStatusBarItem];
 }
 
-- (NSURL *)applicationFilesDirectory {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *libraryURL = [[fileManager URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] lastObject];
-    
-    return [libraryURL URLByAppendingPathComponent:@"LyricsFetcher"];
+- (IBAction)showAboutWindow:(id)sender {
+    [NSApp activateIgnoringOtherApps:YES];
+    [self.aboutWindow makeKeyAndOrderFront:sender];
 }
 
-- (NSManagedObjectModel *)managedObjectModel {
-    if (managedObjectModel != nil) {
-        return managedObjectModel;
-    }
-	
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"LyricsFetcher" withExtension:@"momd"];
-    managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
-    
-    return managedObjectModel;
-}
-
-- (NSPersistentStoreCoordinator *) persistentStoreCoordinator {
-    if (persistentStoreCoordinator != nil) {
-        return persistentStoreCoordinator;
-    }
-
-    NSManagedObjectModel *mom = [self managedObjectModel];
-    if (mom == nil) {
-        NSLog(@"%@: no model to generate a store from", [self class]);
-        return nil;
-    }
-
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *applicationFilesDirectory = [self applicationFilesDirectory];
-    NSError *error = nil;
-    
-    NSDictionary *properties = [applicationFilesDirectory resourceValuesForKeys:[NSArray arrayWithObject:NSURLIsDirectoryKey] error:&error];
-        
-    if (!properties) {
-        BOOL ok = NO;
-        if ([error code] == NSFileReadNoSuchFileError) {
-            ok = [fileManager createDirectoryAtPath:[applicationFilesDirectory path] withIntermediateDirectories:YES attributes:nil error:&error];
-        }
-        if (!ok) {
-            [[NSApplication sharedApplication] presentError:error];
-            return nil;
-        }
-    }
-    else {
-        if ([[properties objectForKey:NSURLIsDirectoryKey] boolValue] != YES) {
-            NSLog(@"%@:expected folder to store app data, found file", [self class]);
-            return nil;
-        }
-    }
-    
-    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"LyricsFetcher.storedata"];
-    persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
-    if ([persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error] == nil) {
-        NSLog(@"%@:failed to add persistent store", [self class]);
-        return nil;
-    }
-
-    return persistentStoreCoordinator;
-}
-
-- (NSManagedObjectContext *) managedObjectContext {
-    if (managedObjectContext != nil) {
-        return managedObjectContext;
-    }
-
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (coordinator == nil) {
-        NSLog(@"%@:failed to create persistent store coordinator", [self class]);
-        return nil;
-    }
-    
-    managedObjectContext = [NSManagedObjectContext new];
-    [managedObjectContext setPersistentStoreCoordinator:coordinator];
-
-    return managedObjectContext;
+- (IBAction)showLyricsWindow:(id)sender {
+    [NSApp activateIgnoringOtherApps:YES];
+    [self.lyricsWindow makeKeyAndOrderFront:sender];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
-    if (managedObjectContext == nil) {
-        return NSTerminateNow;
-    }
-
-    if (![[self managedObjectContext] commitEditing]) {
-        NSLog(@"%@:failed to commit changes", [self class]);
-        return NSTerminateNow;
-    }
-
-    if (![[self managedObjectContext] hasChanges]) {
-        return NSTerminateNow;
-    }
-
-    NSError *error = nil;
-    if (![[self managedObjectContext] save:&error]) {
-        NSLog(@"%@:failed to save changes", [self class]);
-    }
+    [self.persistentStorageProvider saveManagedObjectContext];
+    [[NSStatusBar systemStatusBar] removeStatusItem:self.statusBarItem];
 
     return NSTerminateNow;
 }
