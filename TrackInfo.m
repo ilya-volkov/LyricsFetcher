@@ -14,17 +14,20 @@
     return [[TrackInfo alloc] initWithiTunesTrack:track];
 }
 
+- (NSString*)handleNil:(NSString*)string {
+    return string != nil ? string : [NSString string];
+}
+
 - (id)initWithiTunesTrack:(iTunesTrack *)track {
     self = [super init];
     if (self != nil) {
         self.id = [NSNumber numberWithUnsignedInteger:track.databaseID];
-        self.name = track.name;
-        self.artist = track.artist;
-        self.album = track.album;
-        self.lyrics = track.lyrics;
+        self.name = [self handleNil:track.name];
+        self.artist = [self handleNil:track.artist];
+        self.album = [self handleNil:track.album];
+        self.lyrics = [self handleNil:self.lyrics];
         
-        int artworksCount = [[track artworks] count];
-        if (artworksCount > 0)
+        if ([[track artworks] count] > 0)
             self.artwork = [(iTunesArtwork*)[[track artworks] objectAtIndex:0] data];
                 
         internalTrack = track;
@@ -34,7 +37,7 @@
 }
 
 - (void)update {
-    if ([internalTrack exists])
+    if ([internalTrack exists] && ![internalTrack.lyrics isEqualToString:self.lyrics])
         internalTrack.lyrics = self.lyrics;
 }
 

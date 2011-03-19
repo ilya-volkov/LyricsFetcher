@@ -1,5 +1,9 @@
 #import "LyricsFetcherAppDelegate.h"
 #import "PersistentStorageProvider.h"
+#import "ChartLyricsLyricsProvider.h"
+#import "SearchLyricsResult.h"
+#import "iTunesController.h"
+#import "TrackInfo.h"
 
 @implementation LyricsFetcherAppDelegate
 
@@ -9,6 +13,9 @@
 @synthesize version;
 @synthesize copyright;
 @synthesize menu;
+@synthesize lyricsProvider;
+@synthesize iTunes;
+@synthesize currentTrack;
 @synthesize statusBarItem;
 @synthesize persistentStorageProvider;
 
@@ -35,9 +42,37 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     self.persistentStorageProvider = [PersistentStorageProvider new];
+    self.lyricsProvider = [ChartLyricsLyricsProvider new];
+    self.iTunes = [iTunesController controllerWithDelegate:self];
     
     [self dataBindAboutWindow];
     [self createStatusBarItem];
+    [self currentTrackChangedTo:[self.iTunes getCurrentTrack]];
+}
+
+- (void)currentTrackChangedTo:(TrackInfo*)track {
+    [self.currentTrack update];
+    
+    if (track == nil)
+        return;
+    
+    self.currentTrack = track;
+    
+    [self.lyricsProvider beginSearchLyricsFor:track.name by:track.artist callback: ^(SearchLyricsResult* result){
+		if (result == nil) {
+			// TODO: show search by Google template
+			return;
+		}
+        
+        if ([self.currentTrack.lyrics length] == 0)
+            self.currentTrack.lyrics = result.lyrics;
+        
+        // TODO: actions and suggestions
+	}];
+}
+
+- (void)showSuggestion:(NSString*)text {
+    // TODO: show suggestion
 }
 
 - (IBAction)showAboutWindow:(id)sender {

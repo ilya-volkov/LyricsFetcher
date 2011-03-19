@@ -38,7 +38,6 @@
 - (void) iTunesStateChanged:(NSNotification *)notification {
 	NSDictionary *userInfo = [notification userInfo];
 	NSString *state = [userInfo objectForKey:@"Player State"];
-    NSLog(@"Player state %@", state);
 	if (![state isEqualToString:@"Playing"])
 		return;
 	
