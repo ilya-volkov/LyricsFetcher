@@ -38,11 +38,13 @@
 - (void) iTunesStateChanged:(NSNotification *)notification {
 	NSDictionary *userInfo = [notification userInfo];
 	NSString *state = [userInfo objectForKey:@"Player State"];
-	if (![state isEqualToString:@"Playing"])
-		return;
 	
+    if (![state isEqualToString:@"Playing"] && ![state isEqualToString:@"Stopped"])
+        return;
+    
+    TrackInfo *track = [state isEqualToString:@"Playing"] ? [self getCurrentTrack] : nil;
     if (delegate != nil)
-        [self.delegate currentTrackChangedTo:[self getCurrentTrack]];
+        [self.delegate currentTrackChangedTo:track];
 }
 
 - (iTunesTrack*)find:(iTunesTrack*)track in:(iTunesPlaylist*)playlist {

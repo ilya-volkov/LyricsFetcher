@@ -20,4 +20,5 @@
 @property (copy) NSString *album;
 @property (copy) NSString *lyrics;
 @property (copy) NSImage  *artwork;
+@property (copy, readonly) NSString *displayString;
 @end

@@ -21,11 +21,15 @@
 		FD20F7DA13327FF1005997D1 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD20F7D913327FF1005997D1 /* ScriptingBridge.framework */; };
 		FD20F7DD13329539005997D1 /* lyricsFetcherMain.png in Resources */ = {isa = PBXBuildFile; fileRef = FD20F7DB13329539005997D1 /* lyricsFetcherMain.png */; };
 		FD20F7DE13329539005997D1 /* lyricsFetcherStatus.png in Resources */ = {isa = PBXBuildFile; fileRef = FD20F7DC13329539005997D1 /* lyricsFetcherStatus.png */; };
+		FD56DFE01336480900923957 /* SecurityFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD56DFDF1336480900923957 /* SecurityFoundation.framework */; };
 		FD62FA5113329E5500E06A81 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5013329E5500E06A81 /* NSArray+Extensions.m */; };
 		FD62FA5813329E7100E06A81 /* iTunesController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5413329E7100E06A81 /* iTunesController.m */; };
 		FD62FA5913329E7100E06A81 /* TrackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5713329E7100E06A81 /* TrackInfo.m */; };
 		FD62FA5E13329E9800E06A81 /* ChartLyricsLyricsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5B13329E9800E06A81 /* ChartLyricsLyricsProvider.m */; };
 		FD62FA5F13329E9800E06A81 /* SearchLyricsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5D13329E9800E06A81 /* SearchLyricsResult.m */; };
+		FD62FA911334CD5400E06A81 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD62FA901334CD5400E06A81 /* UserDefaults.plist */; };
+		FDE91AA713362CE600EBF3DA /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE91AA613362CE600EBF3DA /* ServiceManagement.framework */; };
+		FDE91AA91336339F00EBF3DA /* launchd.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDE91AA81336339F00EBF3DA /* launchd.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,7 @@
 		FD20F7D913327FF1005997D1 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		FD20F7DB13329539005997D1 /* lyricsFetcherMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lyricsFetcherMain.png; sourceTree = "<group>"; };
 		FD20F7DC13329539005997D1 /* lyricsFetcherStatus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lyricsFetcherStatus.png; sourceTree = "<group>"; };
+		FD56DFDF1336480900923957 /* SecurityFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SecurityFoundation.framework; path = System/Library/Frameworks/SecurityFoundation.framework; sourceTree = SDKROOT; };
 		FD62FA4F13329E5500E06A81 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
 		FD62FA5013329E5500E06A81 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
 		FD62FA5213329E7100E06A81 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
@@ -75,6 +80,9 @@
 		FD62FA5B13329E9800E06A81 /* ChartLyricsLyricsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartLyricsLyricsProvider.m; sourceTree = "<group>"; };
 		FD62FA5C13329E9800E06A81 /* SearchLyricsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchLyricsResult.h; sourceTree = "<group>"; };
 		FD62FA5D13329E9800E06A81 /* SearchLyricsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchLyricsResult.m; sourceTree = "<group>"; };
+		FD62FA901334CD5400E06A81 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
+		FDE91AA613362CE600EBF3DA /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		FDE91AA81336339F00EBF3DA /* launchd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = launchd.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD56DFE01336480900923957 /* SecurityFoundation.framework in Frameworks */,
+				FDE91AA713362CE600EBF3DA /* ServiceManagement.framework in Frameworks */,
 				FD20F7DA13327FF1005997D1 /* ScriptingBridge.framework in Frameworks */,
 				FD20F758133154C0005997D1 /* Cocoa.framework in Frameworks */,
 			);
@@ -101,6 +111,8 @@
 		FD20F748133154C0005997D1 = {
 			isa = PBXGroup;
 			children = (
+				FD56DFDF1336480900923957 /* SecurityFoundation.framework */,
+				FDE91AA613362CE600EBF3DA /* ServiceManagement.framework */,
 				FD20F75D133154C0005997D1 /* LyricsFetcher */,
 				FD20F77B133154C0005997D1 /* LyricsFetcherTests */,
 				FD20F756133154C0005997D1 /* Frameworks */,
@@ -163,6 +175,8 @@
 				FD20F760133154C0005997D1 /* InfoPlist.strings */,
 				FD20F763133154C0005997D1 /* LyricsFetcher-Prefix.pch */,
 				FD20F764133154C0005997D1 /* main.m */,
+				FD62FA901334CD5400E06A81 /* UserDefaults.plist */,
+				FDE91AA81336339F00EBF3DA /* launchd.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -297,6 +311,8 @@
 				FD20F76E133154C0005997D1 /* MainMenu.xib in Resources */,
 				FD20F7DD13329539005997D1 /* lyricsFetcherMain.png in Resources */,
 				FD20F7DE13329539005997D1 /* lyricsFetcherStatus.png in Resources */,
+				FD62FA911334CD5400E06A81 /* UserDefaults.plist in Resources */,
+				FDE91AA91336339F00EBF3DA /* launchd.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +443,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;
@@ -444,7 +460,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;

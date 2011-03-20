@@ -10,13 +10,18 @@
 
 - (IBAction)showAboutWindow:(id)sender;
 - (IBAction)showLyricsWindow:(id)sender;
+- (IBAction)showPreferencesWindow:(id)sender;
+- (IBAction)startOnSystemStartupCheckboxToggle:(NSButton*)sender;
+- (IBAction)keepLyricsWindowInFrontOfOthersCheckboxToggle:(NSButton*)sender;
 
 @property IBOutlet NSWindow *lyricsWindow;
 @property IBOutlet NSWindow *aboutWindow;
+@property IBOutlet NSWindow *preferencesWindow;
 @property IBOutlet NSTextField *appName;
 @property IBOutlet NSTextField *version;
 @property IBOutlet NSTextField *copyright;
 @property IBOutlet NSMenu *menu;
+@property IBOutlet NSMenuItem *currentTrackInfoMenuItem;
 
 @property ChartLyricsLyricsProvider *lyricsProvider;
 @property iTunesController *iTunes;
