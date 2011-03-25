@@ -36,12 +36,10 @@
     return self;
 }
 
-- (NSString*)displayString {
-    return [self.artist stringByAppendingFormat:@": %@", self.name];
-}
-
 - (void)update {
-    if ([internalTrack exists] && ![internalTrack.lyrics isEqualToString:self.lyrics])
+    if ([internalTrack exists])
+        return; 
+    if(![internalTrack.lyrics isEqualToString:self.lyrics])
         internalTrack.lyrics = self.lyrics;
 }
 

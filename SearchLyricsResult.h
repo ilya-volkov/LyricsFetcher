@@ -3,12 +3,16 @@
 
 @interface SearchLyricsResult : NSObject
 
++(SearchLyricsResult*)searchResultWithDictionary:(NSDictionary*)dictionary;
+
+-(BOOL)canAddLyrics;
+-(BOOL)canCorrectLyrics;
+
 @property (copy) NSNumber *trackId;
 @property (copy) NSNumber *lyricsId;
 @property (copy) NSURL    *lyricsUrl;
 @property (copy) NSURL    *lyricsCorrectUrl;
 @property (copy) NSString *lyrics;
-
-+ (SearchLyricsResult*) searchResultWithDictionary:(NSDictionary*)dictionary;
+@property (readonly) NSURL *lyricsAddUrl;
 
 @end

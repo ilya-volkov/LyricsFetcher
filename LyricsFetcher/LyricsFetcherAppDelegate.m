@@ -4,6 +4,9 @@
 #import "SearchLyricsResult.h"
 #import "iTunesController.h"
 #import "TrackInfo.h"
+#import "TrackInfoTransformer.h"
+
+#import "LyricsFetcherAppDelegate+Actions.h"
 
 @implementation LyricsFetcherAppDelegate
 
@@ -20,6 +23,10 @@
 @synthesize currentTrack;
 @synthesize statusBarItem;
 @synthesize persistentStorageProvider;
+
+@synthesize addAction;
+@synthesize correctAction;
+@synthesize searchAction;
 
 - (void)registerDefaultUserSettings {
     NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:
@@ -109,14 +116,12 @@
     [self.currentTrackInfoMenuItem bind:@"enabled" toObject:alwaysNo withKeyPath:@"boolValue" options:nil];
 }
 
-- (void)configureCocoaBinding {
-    [self.currentTrackInfoMenuItem bind: @"title" 
-                               toObject: self
-                            withKeyPath: @"currentTrack.displayString" 
-                                options: [NSDictionary dictionaryWithObject: NSLocalizedStringFromTable(@"CurrentTrackInfoNotExists", @"InfoPlist", nil) 
-                                                                     forKey: NSNullPlaceholderBindingOption]
-     ];    
+- (void)configureCocoaBinding {    
     [self disableCurrentTrackInfoMenuItem];
+}
+
+- (void)registerValueTransformers {
+    [NSValueTransformer setValueTransformer:[TrackInfoTransformer new] forName:@"TrackInfoTransformer"];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -128,6 +133,7 @@
     [self createStatusBarItem];
     [self currentTrackChangedTo:[self.iTunes getCurrentTrack]];
     [self configureCocoaBinding];
+    [self registerValueTransformers];
 }
 
 - (void)currentTrackChangedTo:(TrackInfo*)track {
@@ -136,10 +142,14 @@
     
     self.currentTrack = track;
     
-    if (track == nil)
+    if (track == nil) {
+        [self updateActionsForSearchResult:nil];
         return;
+    }
     
     [self.lyricsProvider beginSearchLyricsFor:track.name by:track.artist callback: ^(SearchLyricsResult* result){
+        [self updateActionsForSearchResult:result];                
+        
 		if (result == nil) {
 			// TODO: show search by Google template
 			return;
@@ -147,14 +157,11 @@
         
         if ([self.currentTrack.lyrics length] == 0)
             self.currentTrack.lyrics = result.lyrics;
-        
-        // TODO: actions and suggestions
 	}];
 }
 
 - (void)showSuggestion:(NSString*)text {
     BOOL disableSuggestions = [[NSUserDefaults standardUserDefaults] boolForKey:@"DisableSuggestions"];
-    // TODO: show suggestion
 }
 
 - (NSInteger)getLyricsWindowLevel {

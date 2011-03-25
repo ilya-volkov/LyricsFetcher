@@ -21,15 +21,18 @@
 		FD20F7DA13327FF1005997D1 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD20F7D913327FF1005997D1 /* ScriptingBridge.framework */; };
 		FD20F7DD13329539005997D1 /* lyricsFetcherMain.png in Resources */ = {isa = PBXBuildFile; fileRef = FD20F7DB13329539005997D1 /* lyricsFetcherMain.png */; };
 		FD20F7DE13329539005997D1 /* lyricsFetcherStatus.png in Resources */ = {isa = PBXBuildFile; fileRef = FD20F7DC13329539005997D1 /* lyricsFetcherStatus.png */; };
-		FD56DFE01336480900923957 /* SecurityFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD56DFDF1336480900923957 /* SecurityFoundation.framework */; };
 		FD62FA5113329E5500E06A81 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5013329E5500E06A81 /* NSArray+Extensions.m */; };
 		FD62FA5813329E7100E06A81 /* iTunesController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5413329E7100E06A81 /* iTunesController.m */; };
 		FD62FA5913329E7100E06A81 /* TrackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5713329E7100E06A81 /* TrackInfo.m */; };
 		FD62FA5E13329E9800E06A81 /* ChartLyricsLyricsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5B13329E9800E06A81 /* ChartLyricsLyricsProvider.m */; };
 		FD62FA5F13329E9800E06A81 /* SearchLyricsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5D13329E9800E06A81 /* SearchLyricsResult.m */; };
 		FD62FA911334CD5400E06A81 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD62FA901334CD5400E06A81 /* UserDefaults.plist */; };
-		FDE91AA713362CE600EBF3DA /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE91AA613362CE600EBF3DA /* ServiceManagement.framework */; };
-		FDE91AA91336339F00EBF3DA /* launchd.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDE91AA81336339F00EBF3DA /* launchd.plist */; };
+		FD6EC921133BBCBA00D2728E /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EC920133BBCBA00D2728E /* Action.m */; };
+		FD6EC935133D066F00D2728E /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EC934133D066F00D2728E /* NSString+Extensions.m */; };
+		FD6EC938133D178400D2728E /* TrackInfoTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EC937133D177E00D2728E /* TrackInfoTransformer.m */; };
+		FD707251133A8F4D002E2AC7 /* LyricsFetcherAppDelegate+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD707250133A8F4D002E2AC7 /* LyricsFetcherAppDelegate+Actions.m */; };
+		FD707254133A971D002E2AC7 /* OpenUrlAction.m in Sources */ = {isa = PBXBuildFile; fileRef = FD707253133A971D002E2AC7 /* OpenUrlAction.m */; };
+		FD707257133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = FD707256133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +70,6 @@
 		FD20F7D913327FF1005997D1 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		FD20F7DB13329539005997D1 /* lyricsFetcherMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lyricsFetcherMain.png; sourceTree = "<group>"; };
 		FD20F7DC13329539005997D1 /* lyricsFetcherStatus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lyricsFetcherStatus.png; sourceTree = "<group>"; };
-		FD56DFDF1336480900923957 /* SecurityFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SecurityFoundation.framework; path = System/Library/Frameworks/SecurityFoundation.framework; sourceTree = SDKROOT; };
 		FD62FA4F13329E5500E06A81 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
 		FD62FA5013329E5500E06A81 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
 		FD62FA5213329E7100E06A81 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
@@ -81,8 +83,18 @@
 		FD62FA5C13329E9800E06A81 /* SearchLyricsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchLyricsResult.h; sourceTree = "<group>"; };
 		FD62FA5D13329E9800E06A81 /* SearchLyricsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchLyricsResult.m; sourceTree = "<group>"; };
 		FD62FA901334CD5400E06A81 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
-		FDE91AA613362CE600EBF3DA /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
-		FDE91AA81336339F00EBF3DA /* launchd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = launchd.plist; sourceTree = "<group>"; };
+		FD6EC91F133BBCBA00D2728E /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
+		FD6EC920133BBCBA00D2728E /* Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Action.m; sourceTree = "<group>"; };
+		FD6EC933133D066F00D2728E /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
+		FD6EC934133D066F00D2728E /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
+		FD6EC936133D177800D2728E /* TrackInfoTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackInfoTransformer.h; sourceTree = "<group>"; };
+		FD6EC937133D177E00D2728E /* TrackInfoTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackInfoTransformer.m; sourceTree = "<group>"; };
+		FD70724F133A8F4D002E2AC7 /* LyricsFetcherAppDelegate+Actions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LyricsFetcherAppDelegate+Actions.h"; sourceTree = "<group>"; };
+		FD707250133A8F4D002E2AC7 /* LyricsFetcherAppDelegate+Actions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LyricsFetcherAppDelegate+Actions.m"; sourceTree = "<group>"; };
+		FD707252133A971D002E2AC7 /* OpenUrlAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUrlAction.h; sourceTree = "<group>"; };
+		FD707253133A971D002E2AC7 /* OpenUrlAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUrlAction.m; sourceTree = "<group>"; };
+		FD707255133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTrackLyricsByGoogleAction.h; sourceTree = "<group>"; };
+		FD707256133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTrackLyricsByGoogleAction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD56DFE01336480900923957 /* SecurityFoundation.framework in Frameworks */,
-				FDE91AA713362CE600EBF3DA /* ServiceManagement.framework in Frameworks */,
 				FD20F7DA13327FF1005997D1 /* ScriptingBridge.framework in Frameworks */,
 				FD20F758133154C0005997D1 /* Cocoa.framework in Frameworks */,
 			);
@@ -111,8 +121,6 @@
 		FD20F748133154C0005997D1 = {
 			isa = PBXGroup;
 			children = (
-				FD56DFDF1336480900923957 /* SecurityFoundation.framework */,
-				FDE91AA613362CE600EBF3DA /* ServiceManagement.framework */,
 				FD20F75D133154C0005997D1 /* LyricsFetcher */,
 				FD20F77B133154C0005997D1 /* LyricsFetcherTests */,
 				FD20F756133154C0005997D1 /* Frameworks */,
@@ -152,13 +160,19 @@
 		FD20F75D133154C0005997D1 /* LyricsFetcher */ = {
 			isa = PBXGroup;
 			children = (
+				FD6EC939133D255300D2728E /* Settings */,
+				FD70724D133A8E31002E2AC7 /* Actions */,
 				FD20F7C913326F33005997D1 /* LyricsProvider */,
 				FD20F7C813326ED4005997D1 /* iTunesController */,
 				FD20F7C713326EB9005997D1 /* Common */,
-				FD20F769133154C0005997D1 /* LyricsFetcherAppDelegate.h */,
-				FD20F76A133154C0005997D1 /* LyricsFetcherAppDelegate.m */,
 				FD20F7D613327B5F005997D1 /* PersistentStorageProvider.h */,
 				FD20F7D713327B60005997D1 /* PersistentStorageProvider.m */,
+				FD20F769133154C0005997D1 /* LyricsFetcherAppDelegate.h */,
+				FD20F76A133154C0005997D1 /* LyricsFetcherAppDelegate.m */,
+				FD70724F133A8F4D002E2AC7 /* LyricsFetcherAppDelegate+Actions.h */,
+				FD707250133A8F4D002E2AC7 /* LyricsFetcherAppDelegate+Actions.m */,
+				FD6EC936133D177800D2728E /* TrackInfoTransformer.h */,
+				FD6EC937133D177E00D2728E /* TrackInfoTransformer.m */,
 				FD20F75E133154C0005997D1 /* Supporting Files */,
 				FD20F76C133154C0005997D1 /* MainMenu.xib */,
 				FD20F76F133154C0005997D1 /* LyricsFetcher.xcdatamodeld */,
@@ -176,7 +190,6 @@
 				FD20F763133154C0005997D1 /* LyricsFetcher-Prefix.pch */,
 				FD20F764133154C0005997D1 /* main.m */,
 				FD62FA901334CD5400E06A81 /* UserDefaults.plist */,
-				FDE91AA81336339F00EBF3DA /* launchd.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -206,6 +219,8 @@
 			children = (
 				FD62FA4F13329E5500E06A81 /* NSArray+Extensions.h */,
 				FD62FA5013329E5500E06A81 /* NSArray+Extensions.m */,
+				FD6EC933133D066F00D2728E /* NSString+Extensions.h */,
+				FD6EC934133D066F00D2728E /* NSString+Extensions.m */,
 			);
 			name = Common;
 			path = ..;
@@ -235,6 +250,26 @@
 			);
 			name = LyricsProvider;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		FD6EC939133D255300D2728E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		FD70724D133A8E31002E2AC7 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				FD6EC91F133BBCBA00D2728E /* Action.h */,
+				FD6EC920133BBCBA00D2728E /* Action.m */,
+				FD707252133A971D002E2AC7 /* OpenUrlAction.h */,
+				FD707253133A971D002E2AC7 /* OpenUrlAction.m */,
+				FD707255133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.h */,
+				FD707256133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.m */,
+			);
+			name = Actions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +347,6 @@
 				FD20F7DD13329539005997D1 /* lyricsFetcherMain.png in Resources */,
 				FD20F7DE13329539005997D1 /* lyricsFetcherStatus.png in Resources */,
 				FD62FA911334CD5400E06A81 /* UserDefaults.plist in Resources */,
-				FDE91AA91336339F00EBF3DA /* launchd.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +391,12 @@
 				FD62FA5913329E7100E06A81 /* TrackInfo.m in Sources */,
 				FD62FA5E13329E9800E06A81 /* ChartLyricsLyricsProvider.m in Sources */,
 				FD62FA5F13329E9800E06A81 /* SearchLyricsResult.m in Sources */,
+				FD707251133A8F4D002E2AC7 /* LyricsFetcherAppDelegate+Actions.m in Sources */,
+				FD707254133A971D002E2AC7 /* OpenUrlAction.m in Sources */,
+				FD707257133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.m in Sources */,
+				FD6EC921133BBCBA00D2728E /* Action.m in Sources */,
+				FD6EC935133D066F00D2728E /* NSString+Extensions.m in Sources */,
+				FD6EC938133D178400D2728E /* TrackInfoTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,7 +483,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;
@@ -460,7 +500,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;

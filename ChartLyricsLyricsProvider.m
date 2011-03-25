@@ -1,5 +1,6 @@
 #import "ChartLyricsLyricsProvider.h"
 #import "SearchLyricsResult.h"
+#import "NSString+Extensions.h"
 
 @implementation ChartLyricsLyricsProvider
 
@@ -50,8 +51,8 @@ void invocationCallback(WSMethodInvocationRef invocation, void *info, CFDictiona
 }
 
 - (WSMethodInvocationRef) buildSearchLyricsMethodInvocationReferenceFor:(NSString*)song by:(NSString*)artist {
-	NSString *artistArg = [artist length] > 75 ? [artist substringToIndex:75] : artist;
-	NSString *songArg   = [song length] > 125 ? [song substringToIndex:125] : song;
+	NSString *artistArg = [artist truncateTail:75];
+	NSString *songArg   = [song truncateTail:125];
 	
 	NSDictionary *args = [NSDictionary 
 		dictionaryWithObjects: [NSArray arrayWithObjects: artistArg, songArg, nil] 

@@ -1,5 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #import "iTunesControllerDelegate.h"
+#import "Action.h"
 
 @class PersistentStorageProvider;
 @class ChartLyricsLyricsProvider;
@@ -28,5 +29,8 @@
 @property TrackInfo *currentTrack;
 @property NSStatusItem *statusBarItem;
 @property PersistentStorageProvider *persistentStorageProvider;
+@property Action *addAction;
+@property Action *correctAction;
+@property Action *searchAction;
 
 @end
