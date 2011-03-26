@@ -5,6 +5,6 @@
 
 -(id)initWithURL:(NSURL*)url callback:(void(^)())callback;
 
-@property NSURL *url;
+@property (copy) NSURL *url;
 
 @end

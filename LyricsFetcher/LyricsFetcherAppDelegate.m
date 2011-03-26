@@ -5,6 +5,7 @@
 #import "iTunesController.h"
 #import "TrackInfo.h"
 #import "TrackInfoTransformer.h"
+#import "Settings.h"
 
 #import "LyricsFetcherAppDelegate+Actions.h"
 
@@ -22,11 +23,10 @@
 @synthesize iTunes;
 @synthesize currentTrack;
 @synthesize statusBarItem;
-@synthesize persistentStorageProvider;
-
 @synthesize addAction;
 @synthesize correctAction;
 @synthesize searchAction;
+@synthesize settings;
 
 - (void)registerDefaultUserSettings {
     NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:
@@ -125,9 +125,10 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    self.persistentStorageProvider = [PersistentStorageProvider new];
     self.lyricsProvider = [ChartLyricsLyricsProvider new];
     self.iTunes = [iTunesController controllerWithDelegate:self];
+    self.settings = [Settings settingsWithUserDefaults: [NSUserDefaults standardUserDefaults] 
+                             persistentStorageProvider: [PersistentStorageProvider new]];
     
     [self dataBindAboutWindow];
     [self createStatusBarItem];
@@ -137,7 +138,7 @@
 }
 
 - (void)currentTrackChangedTo:(TrackInfo*)track {
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"AutoUpdateTracksWithEmptyLyics"])
+    if (self.settings.autoUpdateTracksWithEmptyLyrics)
         [self.currentTrack update];
     
     self.currentTrack = track;
@@ -161,13 +162,12 @@
 }
 
 - (void)showSuggestion:(NSString*)text {
-    BOOL disableSuggestions = [[NSUserDefaults standardUserDefaults] boolForKey:@"DisableSuggestions"];
+    BOOL disableSuggestions = self.settings.disableSuggestions;
 }
 
 - (NSInteger)getLyricsWindowLevel {
-    BOOL keepInFront = [[NSUserDefaults standardUserDefaults] boolForKey:@"KeepLyricsWindowInFrontOfOthers"];
-    
-    return keepInFront ? NSPopUpMenuWindowLevel : NSNormalWindowLevel;
+    return self.settings.keepLyricsWindowInFrontOfOthers ? NSPopUpMenuWindowLevel 
+                                                         : NSNormalWindowLevel;
 }
 
 - (void)showWindow:(NSWindow*)window {
@@ -189,7 +189,7 @@
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
-    [self.persistentStorageProvider saveManagedObjectContext];
+    [self.settings saveChanges];
     [[NSStatusBar systemStatusBar] removeStatusItem:self.statusBarItem];
 
     return NSTerminateNow;

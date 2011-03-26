@@ -2,6 +2,7 @@
 #import "LyricsFetcherAppDelegate+Actions.h"
 #import "SearchLyricsResult.h"
 #import "Action.h"
+#import "Settings.h"
 
 @implementation LyricsFetcherAppDelegate (Actions)
 
@@ -11,7 +12,8 @@
         
     
     return [Action actionWithURL:result.lyricsAddUrl callback:^(){
-        NSLog(@"TODO: recently added %@", self.currentTrack.id);
+        [self.settings wasAdded:self.currentTrack.id];
+        NSLog(@"Track with id %@ was added", self.currentTrack.id); // test
     }];
 }
 
@@ -21,7 +23,8 @@
 
     
     return [Action actionWithURL:result.lyricsCorrectUrl callback:^(){
-        NSLog(@"TODO: recently corrected %@", self.currentTrack.id);
+        [self.settings wasCorrected:self.currentTrack.id];
+        NSLog(@"Track with id %@ was corrected", self.currentTrack.id); // test
     }];
 }
 

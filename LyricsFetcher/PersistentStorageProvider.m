@@ -2,6 +2,63 @@
 
 @implementation PersistentStorageProvider
 
+- (BOOL)existsEntity:(NSString*)name withId:(NSNumber*)id {
+    NSError *error;
+	
+	NSFetchRequest *request = [NSFetchRequest new];
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id == %@", id];
+    
+	[request setPredicate:predicate];
+	[request setEntity:[NSEntityDescription entityForName:name inManagedObjectContext:self.managedObjectContext]];
+	
+	NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+	if (results == nil)
+		NSLog(@"Fetch request failed: %@", [error description]);
+    
+    return ([results count] != 0);
+}
+
+- (void)addNewEntity:(NSString*)name withId:(NSNumber*)id {
+    NSManagedObject *newEntity = [NSEntityDescription 
+        insertNewObjectForEntityForName:name
+        inManagedObjectContext:self.managedObjectContext
+    ];
+    
+    [newEntity setId:id];
+}
+
+- (void)wasDeclinedToAdd:(NSNumber*)id {
+    [self addNewEntity:@"DeclinedToAdd" withId:id];
+}
+
+- (void)wasDeclinedToCorrect:(NSNumber*)id {
+    [self addNewEntity:@"DeclinedToCorrect" withId:id];
+}
+
+- (void)wasAdded:(NSNumber*)id {
+    [self addNewEntity:@"AlreadyAdded" withId:id];
+}
+
+- (void)wasCorrected:(NSNumber*)id {
+    [self addNewEntity:@"AlreadyCorrected" withId:id];
+}
+
+- (BOOL)isDeclinedToAdd:(NSNumber*)id {
+    return [self existsEntity:@"DeclinedToAdd" withId:id];
+}
+
+- (BOOL)isDeclinedToCorrect:(NSNumber*)id {
+    return [self existsEntity:@"DeclinedToCorrect" withId:id];
+}
+
+- (BOOL)isAlreadyAdded:(NSNumber*)id {
+    return [self existsEntity:@"AlreadyAdded" withId:id];
+}
+
+- (BOOL)isAlreadyCorrected:(NSNumber*)id {
+    return [self existsEntity:@"AlreadyCorrected" withId:id];
+}
+
 - (NSURL*)applicationFilesDirectory {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *libraryURL = [[fileManager URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] lastObject];

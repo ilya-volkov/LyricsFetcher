@@ -4,9 +4,13 @@
 
 @implementation TrackInfoTransformer
 
-+ (Class)transformedValueClass { return [NSString class]; }
++ (Class)transformedValueClass { 
+    return [NSString class]; 
+}
 
-+ (BOOL)allowsReverseTransformation { return NO; }
++ (BOOL)allowsReverseTransformation { 
+    return NO; 
+}
 
 - (id)transformedValue:(id)value {
     if (value == nil)

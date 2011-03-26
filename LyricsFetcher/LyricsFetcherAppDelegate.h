@@ -6,6 +6,7 @@
 @class ChartLyricsLyricsProvider;
 @class iTunesController;
 @class TrackInfo;
+@class Settings;
 
 @interface LyricsFetcherAppDelegate : NSObject <NSApplicationDelegate, iTunesControllerDelegate>
 
@@ -28,9 +29,9 @@
 @property iTunesController *iTunes;
 @property TrackInfo *currentTrack;
 @property NSStatusItem *statusBarItem;
-@property PersistentStorageProvider *persistentStorageProvider;
 @property Action *addAction;
 @property Action *correctAction;
 @property Action *searchAction;
+@property Settings *settings;
 
 @end
