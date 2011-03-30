@@ -39,6 +39,7 @@
 @synthesize chartlyricsLink;
 @synthesize editMode;
 @synthesize splitView;
+@synthesize lyricsText;
 
 - (void)registerDefaultUserSettings {
     NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:
@@ -238,6 +239,7 @@
 
 - (void)configureCocoaBinding {    
     [self disableCurrentTrackInfoMenuItem];
+    [self.lyricsText bind:@"selectable" toObject:self withKeyPath:@"editMode" options:nil];
 }
 
 
@@ -252,7 +254,13 @@
                                                                                              nextCreator: nil]];
 }
 
-- (void)setupParagraphStyles {
+- (void)setupLyricsTextStyle {
+    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    [style setAlignment:NSCenterTextAlignment];
+    
+    [self.lyricsText setDefaultParagraphStyle:style];
+    [self.lyricsText setTextContainerInset:NSMakeSize(10, 10)];
+    [self.lyricsText setFont:[NSFont systemFontOfSize:12]];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -264,11 +272,11 @@
     [self dataBindAboutWindow];
     [self createStatusBarItem];
     [self currentTrackChangedTo:
-     [self.iTunes getCurrentTrack]];
+    [self.iTunes getCurrentTrack]];
     [self configureCocoaBinding];    
     [self registerValueTransformers];
     [self createSuggestionCreators];
-    [self setupParagraphStyles];
+    [self setupLyricsTextStyle];
     
     [self.splitView setDelegate:[SplitViewDelegate new]];
 }
@@ -280,9 +288,6 @@
                                                                               correctAction: self.correctAction];
     
     self.currentSuggestion = [self.suggestionCreator createWithContext:context];
-    if (self.editMode)
-        return;
-    
     if (self.currentSuggestion != nil)
         [self showSuggestion];
     else

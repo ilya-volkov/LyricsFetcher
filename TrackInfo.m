@@ -25,7 +25,8 @@
         self.name = [self handleNil:track.name];
         self.artist = [self handleNil:track.artist];
         self.album = [self handleNil:track.album];
-        self.lyrics = [self handleNil:self.lyrics];
+        self.lyrics = [self handleNil:track.lyrics];
+        NSString *s = track.lyrics;
         
         if ([[track artworks] count] > 0)
             self.artwork = [(iTunesArtwork*)[[track artworks] objectAtIndex:0] data];
@@ -37,7 +38,7 @@
 }
 
 - (void)update {
-    if ([internalTrack exists])
+    if (![internalTrack exists])
         return;
     
     if(![internalTrack.lyrics isEqualToString:self.lyrics])

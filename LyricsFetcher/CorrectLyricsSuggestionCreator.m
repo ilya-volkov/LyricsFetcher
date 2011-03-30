@@ -23,10 +23,10 @@
     if (context.correctAction == nil)
         return nil;
     
-    /*if (!([context.trackInfo.lyrics length] > 0 
+    if (!([context.trackInfo.lyrics length] > 0 
         && [context.searchResult.lyrics length] > 0
         && ![context.trackInfo.lyrics isEqualToString:context.searchResult.lyrics]))
-        return nil;*/
+        return nil;
     
     return [Suggestion suggestionWithMessage: NSLocalizedStringFromTable(@"CorrectLyricsSuggestion", @"InfoPlist", nil)
                                       action: context.correctAction 

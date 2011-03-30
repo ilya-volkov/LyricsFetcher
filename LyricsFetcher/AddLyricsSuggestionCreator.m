@@ -24,8 +24,8 @@
     if (context.addAction == nil)
         return nil;
     
-    /*if ([context.trackInfo.lyrics length] == 0)
-        return nil;*/
+    if ([context.trackInfo.lyrics length] == 0)
+        return nil;
     
     return [Suggestion suggestionWithMessage: NSLocalizedStringFromTable(@"SubmitLyricsSuggestion", @"InfoPlist", nil)
                                       action: context.addAction 

@@ -32,6 +32,7 @@
 @property IBOutlet NSMenuItem *currentTrackInfoMenuItem;
 @property IBOutlet NSTextField *chartlyricsLink;
 @property IBOutlet NSSplitView *splitView;
+@property IBOutlet NSTextView *lyricsText;
 
 @property ChartLyricsLyricsProvider *lyricsProvider;
 @property iTunesController *iTunes;
