@@ -1,3 +1,5 @@
 {
 	"CurrentTrackInfoNotExists" = "No Current Track";
+	"SubmitLyricsSuggestion" = "You have the lyrics that are missing on Chartlyrics.com . Submit the lyrics to Chartlyrics.com?";
+	"CorrectLyricsSuggestion" = "Your version of the lyrics is different from the one that Chartlyrics.com provides. Correct the lyrics on Chartlyrics.com?";
 }

@@ -5,30 +5,28 @@
 
 @implementation Action
 
-+(Action*)actionWithURL:(NSURL*)url callback:(void(^)())callback {
+@synthesize actionCallback;
+
++(Action*)actionWithURL:(NSURL*)url callback:(ParameterlessCallback)callback {
     return [[OpenUrlAction alloc] initWithURL:url callback:callback];
 }
 
-+(Action*)actionWithTrackInfo:(TrackInfo*)track callback:(void(^)())callback {
++(Action*)actionWithTrackInfo:(TrackInfo*)track callback:(ParameterlessCallback)callback {
     return [[SearchTrackLyricsByGoogleAction alloc] initWithTrackInfo:track callback:callback];
 }
 
--(id)initWithCallback:(void(^)())callback {
+-(id)initWithCallback:(ParameterlessCallback)callback {
     self = [super init];
     if (self != nil) {
-        actionCallback = [callback copy];
+        self.actionCallback = callback;
     }
     
     return self;
 }
 
 -(void)perform {
-    if (actionCallback != nil)
-        actionCallback();
-}
-
-- (BOOL)valid {
-    return true;
+    if (self.actionCallback != nil)
+        self.actionCallback();
 }
 
 @end

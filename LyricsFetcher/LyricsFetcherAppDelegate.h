@@ -7,9 +7,15 @@
 @class iTunesController;
 @class TrackInfo;
 @class Settings;
+@class Suggestion;
+@class SuggestionCreator;
 
 @interface LyricsFetcherAppDelegate : NSObject <NSApplicationDelegate, iTunesControllerDelegate>
 
+- (IBAction)toggleEditMode:(id)sender;
+- (IBAction)acceptSuggestion:(id)sender;
+- (IBAction)declineSuggestion:(id)sender;
+- (IBAction)closeSuggestion:(id)sender;
 - (IBAction)showAboutWindow:(id)sender;
 - (IBAction)showLyricsWindow:(id)sender;
 - (IBAction)showPreferencesWindow:(id)sender;
@@ -24,6 +30,8 @@
 @property IBOutlet NSTextField *copyright;
 @property IBOutlet NSMenu *menu;
 @property IBOutlet NSMenuItem *currentTrackInfoMenuItem;
+@property IBOutlet NSTextField *chartlyricsLink;
+@property IBOutlet NSSplitView *splitView;
 
 @property ChartLyricsLyricsProvider *lyricsProvider;
 @property iTunesController *iTunes;
@@ -33,5 +41,8 @@
 @property Action *correctAction;
 @property Action *searchAction;
 @property Settings *settings;
+@property Suggestion *currentSuggestion;
+@property SuggestionCreator *suggestionCreator;
+@property BOOL editMode;
 
 @end

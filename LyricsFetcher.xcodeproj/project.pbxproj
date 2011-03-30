@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD1CD7C1133E0CB300D8464B /* Suggestion.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CD7C0133E0CB300D8464B /* Suggestion.m */; };
+		FD1CD7C4133E147900D8464B /* SuggestionCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CD7C3133E147800D8464B /* SuggestionCreator.m */; };
+		FD1CD7C7133E16D000D8464B /* AddLyricsSuggestionCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CD7C6133E16CF00D8464B /* AddLyricsSuggestionCreator.m */; };
+		FD1CD7CA133E170600D8464B /* CorrectLyricsSuggestionCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CD7C9133E170500D8464B /* CorrectLyricsSuggestionCreator.m */; };
+		FD1CD7D1133F5AAD00D8464B /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CD7D0133F5AAD00D8464B /* GradientView.m */; };
+		FD1CD7D4133F9E2B00D8464B /* SuggestionCreationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CD7D3133F9E2700D8464B /* SuggestionCreationContext.m */; };
+		FD1CD7DB133FB04700D8464B /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CD7DA133FB04700D8464B /* NSAttributedString+Hyperlink.m */; };
 		FD20F758133154C0005997D1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD20F757133154C0005997D1 /* Cocoa.framework */; };
 		FD20F762133154C0005997D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD20F760133154C0005997D1 /* InfoPlist.strings */; };
 		FD20F765133154C0005997D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD20F764133154C0005997D1 /* main.m */; };
-		FD20F76B133154C0005997D1 /* LyricsFetcherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD20F76A133154C0005997D1 /* LyricsFetcherAppDelegate.m */; };
 		FD20F76E133154C0005997D1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD20F76C133154C0005997D1 /* MainMenu.xib */; };
 		FD20F771133154C0005997D1 /* LyricsFetcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD20F76F133154C0005997D1 /* LyricsFetcher.xcdatamodeld */; };
 		FD20F778133154C0005997D1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD20F757133154C0005997D1 /* Cocoa.framework */; };
@@ -27,6 +33,8 @@
 		FD62FA5E13329E9800E06A81 /* ChartLyricsLyricsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5B13329E9800E06A81 /* ChartLyricsLyricsProvider.m */; };
 		FD62FA5F13329E9800E06A81 /* SearchLyricsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5D13329E9800E06A81 /* SearchLyricsResult.m */; };
 		FD62FA911334CD5400E06A81 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD62FA901334CD5400E06A81 /* UserDefaults.plist */; };
+		FD6BD73513425BEC00725811 /* SplitViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BD73413425BEC00725811 /* SplitViewDelegate.m */; };
+		FD6BD7391343AB5B00725811 /* LyricsFetcherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BD7381343AB5900725811 /* LyricsFetcherAppDelegate.m */; };
 		FD6EC921133BBCBA00D2728E /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EC920133BBCBA00D2728E /* Action.m */; };
 		FD6EC935133D066F00D2728E /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EC934133D066F00D2728E /* NSString+Extensions.m */; };
 		FD6EC938133D178400D2728E /* TrackInfoTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6EC937133D177E00D2728E /* TrackInfoTransformer.m */; };
@@ -34,6 +42,7 @@
 		FD707251133A8F4D002E2AC7 /* LyricsFetcherAppDelegate+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD707250133A8F4D002E2AC7 /* LyricsFetcherAppDelegate+Actions.m */; };
 		FD707254133A971D002E2AC7 /* OpenUrlAction.m in Sources */ = {isa = PBXBuildFile; fileRef = FD707253133A971D002E2AC7 /* OpenUrlAction.m */; };
 		FD707257133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = FD707256133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.m */; };
+		FDA04A8E1341A2100001ABE4 /* editModeOff.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA04A8D1341A2100001ABE4 /* editModeOff.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +56,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD1CD7BF133E0CB300D8464B /* Suggestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Suggestion.h; sourceTree = "<group>"; };
+		FD1CD7C0133E0CB300D8464B /* Suggestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Suggestion.m; sourceTree = "<group>"; };
+		FD1CD7C2133E147800D8464B /* SuggestionCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionCreator.h; sourceTree = "<group>"; };
+		FD1CD7C3133E147800D8464B /* SuggestionCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionCreator.m; sourceTree = "<group>"; };
+		FD1CD7C5133E16CF00D8464B /* AddLyricsSuggestionCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLyricsSuggestionCreator.h; sourceTree = "<group>"; };
+		FD1CD7C6133E16CF00D8464B /* AddLyricsSuggestionCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLyricsSuggestionCreator.m; sourceTree = "<group>"; };
+		FD1CD7C8133E170400D8464B /* CorrectLyricsSuggestionCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CorrectLyricsSuggestionCreator.h; sourceTree = "<group>"; };
+		FD1CD7C9133E170500D8464B /* CorrectLyricsSuggestionCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CorrectLyricsSuggestionCreator.m; sourceTree = "<group>"; };
+		FD1CD7CF133F5AAD00D8464B /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
+		FD1CD7D0133F5AAD00D8464B /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
+		FD1CD7D2133F9E2300D8464B /* SuggestionCreationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionCreationContext.h; sourceTree = "<group>"; };
+		FD1CD7D3133F9E2700D8464B /* SuggestionCreationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionCreationContext.m; sourceTree = "<group>"; };
+		FD1CD7D9133FB04700D8464B /* NSAttributedString+Hyperlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Hyperlink.h"; sourceTree = "<group>"; };
+		FD1CD7DA133FB04700D8464B /* NSAttributedString+Hyperlink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Hyperlink.m"; sourceTree = "<group>"; };
 		FD20F753133154C0005997D1 /* LyricsFetcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LyricsFetcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD20F757133154C0005997D1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FD20F75A133154C0005997D1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -57,7 +80,6 @@
 		FD20F763133154C0005997D1 /* LyricsFetcher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LyricsFetcher-Prefix.pch"; sourceTree = "<group>"; };
 		FD20F764133154C0005997D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FD20F769133154C0005997D1 /* LyricsFetcherAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LyricsFetcherAppDelegate.h; sourceTree = "<group>"; };
-		FD20F76A133154C0005997D1 /* LyricsFetcherAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LyricsFetcherAppDelegate.m; sourceTree = "<group>"; };
 		FD20F76D133154C0005997D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FD20F770133154C0005997D1 /* LyricsFetcher.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LyricsFetcher.xcdatamodel; sourceTree = "<group>"; };
 		FD20F777133154C0005997D1 /* LyricsFetcherTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LyricsFetcherTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +106,9 @@
 		FD62FA5C13329E9800E06A81 /* SearchLyricsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchLyricsResult.h; sourceTree = "<group>"; };
 		FD62FA5D13329E9800E06A81 /* SearchLyricsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchLyricsResult.m; sourceTree = "<group>"; };
 		FD62FA901334CD5400E06A81 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
+		FD6BD73313425BEC00725811 /* SplitViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewDelegate.h; sourceTree = "<group>"; };
+		FD6BD73413425BEC00725811 /* SplitViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewDelegate.m; sourceTree = "<group>"; };
+		FD6BD7381343AB5900725811 /* LyricsFetcherAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyricsFetcherAppDelegate.m; sourceTree = "<group>"; };
 		FD6EC91F133BBCBA00D2728E /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
 		FD6EC920133BBCBA00D2728E /* Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Action.m; sourceTree = "<group>"; };
 		FD6EC933133D066F00D2728E /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
@@ -98,6 +123,7 @@
 		FD707253133A971D002E2AC7 /* OpenUrlAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUrlAction.m; sourceTree = "<group>"; };
 		FD707255133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTrackLyricsByGoogleAction.h; sourceTree = "<group>"; };
 		FD707256133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTrackLyricsByGoogleAction.m; sourceTree = "<group>"; };
+		FDA04A8D1341A2100001ABE4 /* editModeOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editModeOff.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +147,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD1CD7BD133E0C9400D8464B /* Suggestions */ = {
+			isa = PBXGroup;
+			children = (
+				FD1CD7BF133E0CB300D8464B /* Suggestion.h */,
+				FD1CD7C0133E0CB300D8464B /* Suggestion.m */,
+				FD1CD7C2133E147800D8464B /* SuggestionCreator.h */,
+				FD1CD7C3133E147800D8464B /* SuggestionCreator.m */,
+				FD1CD7C5133E16CF00D8464B /* AddLyricsSuggestionCreator.h */,
+				FD1CD7C6133E16CF00D8464B /* AddLyricsSuggestionCreator.m */,
+				FD1CD7C8133E170400D8464B /* CorrectLyricsSuggestionCreator.h */,
+				FD1CD7C9133E170500D8464B /* CorrectLyricsSuggestionCreator.m */,
+				FD1CD7D2133F9E2300D8464B /* SuggestionCreationContext.h */,
+				FD1CD7D3133F9E2700D8464B /* SuggestionCreationContext.m */,
+			);
+			name = Suggestions;
+			sourceTree = "<group>";
+		};
+		FD1CD7CE133F5A8800D8464B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD1CD7CF133F5AAD00D8464B /* GradientView.h */,
+				FD1CD7D0133F5AAD00D8464B /* GradientView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		FD20F748133154C0005997D1 = {
 			isa = PBXGroup;
 			children = (
@@ -163,17 +215,21 @@
 		FD20F75D133154C0005997D1 /* LyricsFetcher */ = {
 			isa = PBXGroup;
 			children = (
+				FD1CD7CE133F5A8800D8464B /* Views */,
+				FD1CD7BD133E0C9400D8464B /* Suggestions */,
 				FD6EC939133D255300D2728E /* Settings */,
 				FD70724D133A8E31002E2AC7 /* Actions */,
 				FD20F7C913326F33005997D1 /* LyricsProvider */,
 				FD20F7C813326ED4005997D1 /* iTunesController */,
 				FD20F7C713326EB9005997D1 /* Common */,
 				FD20F769133154C0005997D1 /* LyricsFetcherAppDelegate.h */,
-				FD20F76A133154C0005997D1 /* LyricsFetcherAppDelegate.m */,
+				FD6BD7381343AB5900725811 /* LyricsFetcherAppDelegate.m */,
 				FD70724F133A8F4D002E2AC7 /* LyricsFetcherAppDelegate+Actions.h */,
 				FD707250133A8F4D002E2AC7 /* LyricsFetcherAppDelegate+Actions.m */,
 				FD6EC936133D177800D2728E /* TrackInfoTransformer.h */,
 				FD6EC937133D177E00D2728E /* TrackInfoTransformer.m */,
+				FD6BD73313425BEC00725811 /* SplitViewDelegate.h */,
+				FD6BD73413425BEC00725811 /* SplitViewDelegate.m */,
 				FD20F75E133154C0005997D1 /* Supporting Files */,
 				FD20F76C133154C0005997D1 /* MainMenu.xib */,
 			);
@@ -183,6 +239,7 @@
 		FD20F75E133154C0005997D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FDA04A8D1341A2100001ABE4 /* editModeOff.png */,
 				FD20F7DB13329539005997D1 /* lyricsFetcherMain.png */,
 				FD20F7DC13329539005997D1 /* lyricsFetcherStatus.png */,
 				FD20F75F133154C0005997D1 /* LyricsFetcher-Info.plist */,
@@ -220,6 +277,8 @@
 				FD62FA5013329E5500E06A81 /* NSArray+Extensions.m */,
 				FD6EC933133D066F00D2728E /* NSString+Extensions.h */,
 				FD6EC934133D066F00D2728E /* NSString+Extensions.m */,
+				FD1CD7D9133FB04700D8464B /* NSAttributedString+Hyperlink.h */,
+				FD1CD7DA133FB04700D8464B /* NSAttributedString+Hyperlink.m */,
 			);
 			name = Common;
 			path = ..;
@@ -352,6 +411,7 @@
 				FD20F7DD13329539005997D1 /* lyricsFetcherMain.png in Resources */,
 				FD20F7DE13329539005997D1 /* lyricsFetcherStatus.png in Resources */,
 				FD62FA911334CD5400E06A81 /* UserDefaults.plist in Resources */,
+				FDA04A8E1341A2100001ABE4 /* editModeOff.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +448,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD20F765133154C0005997D1 /* main.m in Sources */,
-				FD20F76B133154C0005997D1 /* LyricsFetcherAppDelegate.m in Sources */,
 				FD20F771133154C0005997D1 /* LyricsFetcher.xcdatamodeld in Sources */,
 				FD20F7D813327B60005997D1 /* PersistentStorageProvider.m in Sources */,
 				FD62FA5113329E5500E06A81 /* NSArray+Extensions.m in Sources */,
@@ -403,6 +462,15 @@
 				FD6EC935133D066F00D2728E /* NSString+Extensions.m in Sources */,
 				FD6EC938133D178400D2728E /* TrackInfoTransformer.m in Sources */,
 				FD6EC940133D32FF00D2728E /* Settings.m in Sources */,
+				FD1CD7C1133E0CB300D8464B /* Suggestion.m in Sources */,
+				FD1CD7C4133E147900D8464B /* SuggestionCreator.m in Sources */,
+				FD1CD7C7133E16D000D8464B /* AddLyricsSuggestionCreator.m in Sources */,
+				FD1CD7CA133E170600D8464B /* CorrectLyricsSuggestionCreator.m in Sources */,
+				FD1CD7D1133F5AAD00D8464B /* GradientView.m in Sources */,
+				FD1CD7D4133F9E2B00D8464B /* SuggestionCreationContext.m in Sources */,
+				FD1CD7DB133FB04700D8464B /* NSAttributedString+Hyperlink.m in Sources */,
+				FD6BD73513425BEC00725811 /* SplitViewDelegate.m in Sources */,
+				FD6BD7391343AB5B00725811 /* LyricsFetcherAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

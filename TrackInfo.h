@@ -13,6 +13,7 @@
 
 - (id)initWithiTunesTrack:(iTunesTrack*)track;
 - (void)update;
+- (void)reset;
 
 @property (copy) NSNumber *id;
 @property (copy) NSString *name;

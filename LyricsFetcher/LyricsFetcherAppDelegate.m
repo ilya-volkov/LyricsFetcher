@@ -6,8 +6,15 @@
 #import "TrackInfo.h"
 #import "TrackInfoTransformer.h"
 #import "Settings.h"
+#import "SuggestionCreator.h"
+#import "AddLyricsSuggestionCreator.h"
+#import "CorrectLyricsSuggestionCreator.h"
+#import "SuggestionCreationContext.h"
+#import "Suggestion.h"
+#import "SplitViewDelegate.h"
 
 #import "LyricsFetcherAppDelegate+Actions.h"
+#import "NSAttributedString+Hyperlink.h"
 
 @implementation LyricsFetcherAppDelegate
 
@@ -27,6 +34,11 @@
 @synthesize correctAction;
 @synthesize searchAction;
 @synthesize settings;
+@synthesize currentSuggestion;
+@synthesize suggestionCreator;
+@synthesize chartlyricsLink;
+@synthesize editMode;
+@synthesize splitView;
 
 - (void)registerDefaultUserSettings {
     NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:
@@ -50,7 +62,7 @@
 - (void)removeLoginItemWithPath:(NSString *)path fromList:(LSSharedFileListRef)loginItemsRef {
 	UInt32 seedValue;
 	CFURLRef outPath;
-
+    
 	CFArrayRef loginItems = LSSharedFileListCopySnapshot(loginItemsRef, &seedValue);
 	for (id item in (NSArray *)loginItems) {		
 		LSSharedFileListItemRef itemRef = (LSSharedFileListItemRef)item;
@@ -87,6 +99,112 @@
         [self.lyricsWindow setLevel:NSNormalWindowLevel];
 }
 
+- (void)showSuggestion {
+    // TODO
+}
+
+- (void)hideSuggestion {
+    // TODO
+}
+
+- (void)showEditModeButtons {
+    NSView *lyricsView = [self.splitView.subviews objectAtIndex:1];
+	NSView *buttonsView = [self.splitView.subviews objectAtIndex:2];
+	
+    NSRect targetFrame = NSMakeRect(
+        [buttonsView frame].origin.x, 
+        [buttonsView frame].origin.y - 45.0, 
+        [buttonsView frame].size.width, 
+        [buttonsView frame].size.height
+    );
+    
+	[NSAnimationContext beginGrouping];
+	[[NSAnimationContext currentContext] setDuration:.5];
+	[[buttonsView animator] setFrame: targetFrame];
+	//[[buttonsView animator] setFrame: view1TargetFrame];
+	[NSAnimationContext endGrouping];
+}
+
+- (void)hideEditModeButtons {
+    NSView *lyricsView = [self.splitView.subviews objectAtIndex:1];
+	NSView *buttonsView = [self.splitView.subviews objectAtIndex:2];
+	
+    NSRect targetFrame = NSMakeRect(
+        [buttonsView frame].origin.x, 
+        [buttonsView frame].origin.y + [buttonsView frame].size.height, 
+        [buttonsView frame].size.width, 
+        [buttonsView frame].size.height
+    );
+    
+	[NSAnimationContext beginGrouping];
+	[[NSAnimationContext currentContext] setDuration:1.0];
+	[[buttonsView animator] setFrame: targetFrame];
+	//[[buttonsView animator] setFrame: view1TargetFrame];
+	[NSAnimationContext endGrouping];
+}
+
+- (void)switchToEditMode {
+    self.editMode = true;
+    // Concurrent animation !!!
+    [self hideSuggestion];
+    [self showEditModeButtons];
+}
+
+- (void)returnFromEditMode {
+    self.editMode = false;
+    [self hideEditModeButtons];
+}
+
+- (IBAction)acceptSuggestion:(id)sender {
+    [self hideSuggestion];
+    [self.currentSuggestion accept];
+}
+
+- (IBAction)declineSuggestion:(id)sender {
+    [self hideSuggestion];
+    [self.currentSuggestion decline];
+}
+
+- (IBAction)closeSuggestion:(id)sender {
+    [self hideSuggestion];
+}
+
+- (IBAction)toggleEditMode:(id)sender {
+    if (self.editMode)
+        [self returnFromEditMode];
+    else
+        [self switchToEditMode];
+}
+
+- (IBAction)searchLyrics:(id)sender {
+    [self.lyricsProvider beginSearchLyricsFor:self.currentTrack.name by:self.currentTrack.artist callback:^(SearchLyricsResult* result){
+        [self updateActionsForSearchResult:result];
+        
+        self.currentTrack.lyrics = result.lyrics;
+	}];
+}
+
+- (IBAction)saveLyrics:(id)sender {
+    [self.currentTrack update];
+    [self returnFromEditMode];
+}
+
+- (IBAction)cancelLyricsEditing:(id)sender {
+    [self.currentTrack reset];
+    [self returnFromEditMode];
+}
+
+- (void)buildChartlyricsLink {
+    [self.chartlyricsLink setAllowsEditingTextAttributes:YES];
+    [self.chartlyricsLink setSelectable:YES];
+    
+    NSURL* url = [NSURL URLWithString:@"http://www.chartlyrics.com"];
+    
+    [self.chartlyricsLink setAttributedStringValue:
+        [NSAttributedString hyperlinkFromString:@"Chartlyrics.com" withURL:url]
+    ];
+}
+
 - (void)dataBindAboutWindow {
     NSBundle *bundle = [NSBundle mainBundle];
     [appName setStringValue:[bundle objectForInfoDictionaryKey:@"CFBundleName"]];
@@ -97,9 +215,11 @@
     ]];
     
     [copyright setStringValue:[bundle objectForInfoDictionaryKey:@"NSHumanReadableCopyright"]];
+    
+    [self buildChartlyricsLink];
 }
 
-- (void) createStatusBarItem {
+- (void)createStatusBarItem {
 	self.statusBarItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
 	if (self.statusBarItem != nil) {
 		[self.statusBarItem setMenu:self.menu];
@@ -120,8 +240,19 @@
     [self disableCurrentTrackInfoMenuItem];
 }
 
+
 - (void)registerValueTransformers {
     [NSValueTransformer setValueTransformer:[TrackInfoTransformer new] forName:@"TrackInfoTransformer"];
+}
+
+- (void)createSuggestionCreators {
+    self.suggestionCreator = 
+    [AddLyricsSuggestionCreator creatorWithSettings: self.settings 
+                                        nextCreator: [CorrectLyricsSuggestionCreator creatorWithSettings: self.settings 
+                                                                                             nextCreator: nil]];
+}
+
+- (void)setupParagraphStyles {
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -132,42 +263,63 @@
     
     [self dataBindAboutWindow];
     [self createStatusBarItem];
-    [self currentTrackChangedTo:[self.iTunes getCurrentTrack]];
-    [self configureCocoaBinding];
+    [self currentTrackChangedTo:
+     [self.iTunes getCurrentTrack]];
+    [self configureCocoaBinding];    
     [self registerValueTransformers];
+    [self createSuggestionCreators];
+    [self setupParagraphStyles];
+    
+    [self.splitView setDelegate:[SplitViewDelegate new]];
+}
+
+- (void)updateSuggestionForSearchResult:(SearchLyricsResult*)result {
+    SuggestionCreationContext *context = [SuggestionCreationContext contextWithSearchResult: result 
+                                                                                  trackInfo: self.currentTrack 
+                                                                                  addAction: self.addAction 
+                                                                              correctAction: self.correctAction];
+    
+    self.currentSuggestion = [self.suggestionCreator createWithContext:context];
+    if (self.editMode)
+        return;
+    
+    if (self.currentSuggestion != nil)
+        [self showSuggestion];
+    else
+        [self hideSuggestion];
+}
+
+- (void)handleSearchResult:(SearchLyricsResult*)result {
+    [self updateActionsForSearchResult:result];
+    [self updateSuggestionForSearchResult:result];
 }
 
 - (void)currentTrackChangedTo:(TrackInfo*)track {
+    if (self.editMode)
+        return;
+    
     if (self.settings.autoUpdateTracksWithEmptyLyrics)
         [self.currentTrack update];
     
     self.currentTrack = track;
     
     if (track == nil) {
-        [self updateActionsForSearchResult:nil];
+        [self handleSearchResult:nil];
+        
         return;
     }
     
-    [self.lyricsProvider beginSearchLyricsFor:track.name by:track.artist callback: ^(SearchLyricsResult* result){
-        [self updateActionsForSearchResult:result];                
-        
-		if (result == nil) {
-			// TODO: show search by Google template
-			return;
-		}
+    [self.lyricsProvider beginSearchLyricsFor:track.name by:track.artist callback:^(SearchLyricsResult* result){
+        [self handleSearchResult:result];
         
         if ([self.currentTrack.lyrics length] == 0)
             self.currentTrack.lyrics = result.lyrics;
 	}];
 }
 
-- (void)showSuggestion:(NSString*)text {
-    BOOL disableSuggestions = self.settings.disableSuggestions;
-}
-
 - (NSInteger)getLyricsWindowLevel {
     return self.settings.keepLyricsWindowInFrontOfOthers ? NSPopUpMenuWindowLevel 
-                                                         : NSNormalWindowLevel;
+    : NSNormalWindowLevel;
 }
 
 - (void)showWindow:(NSWindow*)window {
@@ -191,7 +343,7 @@
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
     [self.settings saveChanges];
     [[NSStatusBar systemStatusBar] removeStatusItem:self.statusBarItem];
-
+    
     return NSTerminateNow;
 }
 

@@ -38,9 +38,14 @@
 
 - (void)update {
     if ([internalTrack exists])
-        return; 
+        return;
+    
     if(![internalTrack.lyrics isEqualToString:self.lyrics])
         internalTrack.lyrics = self.lyrics;
+}
+
+- (void)reset {
+    self.lyrics = internalTrack.lyrics;
 }
 
 @end

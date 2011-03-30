@@ -1,18 +1,17 @@
 #import <Foundation/Foundation.h>
 
+typedef void (^ParameterlessCallback)();
+
 @class TrackInfo;
 
-@interface Action : NSObject {
-@private
-    void (^actionCallback)();
-}
+@interface Action : NSObject
 
-+(Action*)actionWithURL:(NSURL*)url callback:(void(^)())callback;
-+(Action*)actionWithTrackInfo:(TrackInfo*)track callback:(void(^)())callback;
++(Action*)actionWithURL:(NSURL*)url callback:(ParameterlessCallback)callback;
++(Action*)actionWithTrackInfo:(TrackInfo*)track callback:(ParameterlessCallback)callback;
 
--(id)initWithCallback:(void(^)())callback;
+-(id)initWithCallback:(ParameterlessCallback)callback;
 -(void)perform;
 
-@property (readonly) BOOL valid;
+@property (copy) ParameterlessCallback actionCallback;
 
 @end
