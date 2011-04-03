@@ -38,6 +38,7 @@
 @property IBOutlet NSView *editButtonsView;
 @property IBOutlet NSTextField *artist;
 @property IBOutlet NSTextField *song;
+@property IBOutlet NSButton* toggleEditModeButton;
 
 @property ChartLyricsLyricsProvider *lyricsProvider;
 @property iTunesController *iTunes;

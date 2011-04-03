@@ -27,7 +27,7 @@
     if ([context.trackInfo.lyrics length] == 0)
         return nil;
     
-    return [Suggestion suggestionWithMessage: NSLocalizedStringFromTable(@"SubmitLyricsSuggestion", @"InfoPlist", nil)
+    return [Suggestion suggestionWithMessage: NSLocalizedString(@"SubmitLyricsSuggestion", nil)
                                       action: context.addAction 
                               acceptCallback: nil 
                              declineCallback: ^{ [self.settings wasDeclinedToAdd:context.trackInfo.id]; }

@@ -15,7 +15,6 @@
 		FD1CD7D4133F9E2B00D8464B /* SuggestionCreationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CD7D3133F9E2700D8464B /* SuggestionCreationContext.m */; };
 		FD1CD7DB133FB04700D8464B /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CD7DA133FB04700D8464B /* NSAttributedString+Hyperlink.m */; };
 		FD20F758133154C0005997D1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD20F757133154C0005997D1 /* Cocoa.framework */; };
-		FD20F762133154C0005997D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD20F760133154C0005997D1 /* InfoPlist.strings */; };
 		FD20F765133154C0005997D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD20F764133154C0005997D1 /* main.m */; };
 		FD20F76E133154C0005997D1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD20F76C133154C0005997D1 /* MainMenu.xib */; };
 		FD20F771133154C0005997D1 /* LyricsFetcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD20F76F133154C0005997D1 /* LyricsFetcher.xcdatamodeld */; };
@@ -41,8 +40,9 @@
 		FD707251133A8F4D002E2AC7 /* LyricsFetcherAppDelegate+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD707250133A8F4D002E2AC7 /* LyricsFetcherAppDelegate+Actions.m */; };
 		FD707254133A971D002E2AC7 /* OpenUrlAction.m in Sources */ = {isa = PBXBuildFile; fileRef = FD707253133A971D002E2AC7 /* OpenUrlAction.m */; };
 		FD707257133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = FD707256133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.m */; };
-		FDA04A8E1341A2100001ABE4 /* editModeOff.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA04A8D1341A2100001ABE4 /* editModeOff.png */; };
+		FDBD324D1348E9C300CD3443 /* editModeTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBD324C1348E9C300CD3443 /* editModeTemplate.png */; };
 		FDCB29C513471B0A00F76A75 /* MainViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCB29C413471B0900F76A75 /* MainViewAnimator.m */; };
+		FDCB29D51348C01E00F76A75 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDCB29D41348C01E00F76A75 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +76,6 @@
 		FD20F75B133154C0005997D1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FD20F75C133154C0005997D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FD20F75F133154C0005997D1 /* LyricsFetcher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LyricsFetcher-Info.plist"; sourceTree = "<group>"; };
-		FD20F761133154C0005997D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FD20F763133154C0005997D1 /* LyricsFetcher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LyricsFetcher-Prefix.pch"; sourceTree = "<group>"; };
 		FD20F764133154C0005997D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FD20F769133154C0005997D1 /* LyricsFetcherAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LyricsFetcherAppDelegate.h; sourceTree = "<group>"; };
@@ -121,9 +120,10 @@
 		FD707253133A971D002E2AC7 /* OpenUrlAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUrlAction.m; sourceTree = "<group>"; };
 		FD707255133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTrackLyricsByGoogleAction.h; sourceTree = "<group>"; };
 		FD707256133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTrackLyricsByGoogleAction.m; sourceTree = "<group>"; };
-		FDA04A8D1341A2100001ABE4 /* editModeOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editModeOff.png; sourceTree = "<group>"; };
+		FDBD324C1348E9C300CD3443 /* editModeTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editModeTemplate.png; sourceTree = "<group>"; };
 		FDCB29C313471B0900F76A75 /* MainViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewAnimator.h; sourceTree = "<group>"; };
 		FDCB29C413471B0900F76A75 /* MainViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewAnimator.m; sourceTree = "<group>"; };
+		FDCB29D41348C01E00F76A75 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,13 +239,13 @@
 		FD20F75E133154C0005997D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FDA04A8D1341A2100001ABE4 /* editModeOff.png */,
+				FDBD324C1348E9C300CD3443 /* editModeTemplate.png */,
 				FD20F7DC13329539005997D1 /* lyricsFetcherStatus.png */,
 				FD20F763133154C0005997D1 /* LyricsFetcher-Prefix.pch */,
 				FD20F7DB13329539005997D1 /* lyricsFetcherMain.png */,
 				FD20F75F133154C0005997D1 /* LyricsFetcher-Info.plist */,
-				FD20F760133154C0005997D1 /* InfoPlist.strings */,
 				FD20F764133154C0005997D1 /* main.m */,
+				FDCB29D41348C01E00F76A75 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -406,12 +406,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD20F762133154C0005997D1 /* InfoPlist.strings in Resources */,
 				FD20F76E133154C0005997D1 /* MainMenu.xib in Resources */,
 				FD20F7DD13329539005997D1 /* lyricsFetcherMain.png in Resources */,
 				FD20F7DE13329539005997D1 /* lyricsFetcherStatus.png in Resources */,
 				FD62FA911334CD5400E06A81 /* UserDefaults.plist in Resources */,
-				FDA04A8E1341A2100001ABE4 /* editModeOff.png in Resources */,
+				FDCB29D51348C01E00F76A75 /* Localizable.strings in Resources */,
+				FDBD324D1348E9C300CD3443 /* editModeTemplate.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,14 +493,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FD20F760133154C0005997D1 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD20F761133154C0005997D1 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		FD20F76C133154C0005997D1 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

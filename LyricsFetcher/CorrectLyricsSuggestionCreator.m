@@ -28,7 +28,7 @@
         && ![context.trackInfo.lyrics isEqualToString:context.searchResult.lyrics]))
         return nil;
     
-    return [Suggestion suggestionWithMessage: NSLocalizedStringFromTable(@"CorrectLyricsSuggestion", @"InfoPlist", nil)
+    return [Suggestion suggestionWithMessage: NSLocalizedString(@"CorrectLyricsSuggestion", nil)
                                       action: context.correctAction 
                               acceptCallback: nil 
                              declineCallback: ^{ [self.settings wasDeclinedToCorrect:context.trackInfo.id]; }

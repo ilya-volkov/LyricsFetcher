@@ -46,6 +46,7 @@
 @synthesize mainViewAnimator;
 @synthesize song;
 @synthesize artist;
+@synthesize toggleEditModeButton;
 
 - (void)registerDefaultUserSettings {
     NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:
@@ -113,8 +114,6 @@
 }
 
 - (void)switchToEditMode {
-    self.editMode = true;
-    
     [self.mainViewAnimator beginGrouping];
     [self.mainViewAnimator hideSuggestion];
     [self.mainViewAnimator showEditButtons];
@@ -122,8 +121,6 @@
 }
 
 - (void)returnFromEditMode {
-    self.editMode = false;
-    
     [self.mainViewAnimator hideEditButtons];
     [self currentTrackChangedTo:[self.iTunes getCurrentTrack]];
 }
@@ -154,10 +151,15 @@
 }
 
 - (IBAction)toggleEditMode:(id)sender {
-    if (self.editMode)
-        [self returnFromEditModeSavingChanges:false];
-    else
+    if (self.editMode) {
         [self switchToEditMode];
+        [self.toggleEditModeButton setToolTip:NSLocalizedString(@"ReturnFromEditMode", nil)];
+
+    }
+    else {
+        [self returnFromEditModeSavingChanges:false];
+        [self.toggleEditModeButton setToolTip:NSLocalizedString(@"SwitchToEditMode", nil)];    
+    }
 }
 
 - (IBAction)searchLyrics:(id)sender {
@@ -265,6 +267,10 @@
     [self registerValueTransformers];
     [self createSuggestionCreators];
     [self setupLyricsTextStyle];
+    
+    [self.toggleEditModeButton setToolTip:NSLocalizedString(@"SwitchToEditMode", nil)];
+    
+    self.editMode = false;
 }
 
 - (void)updateSuggestionForSearchResult:(SearchLyricsResult*)result {

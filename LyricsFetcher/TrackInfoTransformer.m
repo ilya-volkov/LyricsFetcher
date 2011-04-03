@@ -14,7 +14,7 @@
 
 - (id)transformedValue:(id)value {
     if (value == nil)
-        return NSLocalizedStringFromTable(@"CurrentTrackInfoNotExists", @"InfoPlist", nil);
+        return NSLocalizedString(@"CurrentTrackInfoNotExists", nil);
     
     TrackInfo* trackInfo = (TrackInfo*)value;
 
