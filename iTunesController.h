@@ -3,7 +3,7 @@
 
 @class TrackInfo;
 
-@interface iTunesController : NSObject 
+@interface iTunesController : NSObject
 
 + (iTunesController*)controllerWithDelegate:(id<iTunesControllerDelegate>)delegate;
 

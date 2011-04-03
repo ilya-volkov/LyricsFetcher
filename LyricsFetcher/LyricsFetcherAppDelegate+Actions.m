@@ -13,7 +13,6 @@
     
     return [Action actionWithURL:result.lyricsAddUrl callback:^(){
         [self.settings wasAdded:self.currentTrack.id];
-        NSLog(@"Track with id %@ was added", self.currentTrack.id); // test
     }];
 }
 
@@ -24,7 +23,6 @@
     
     return [Action actionWithURL:result.lyricsCorrectUrl callback:^(){
         [self.settings wasCorrected:self.currentTrack.id];
-        NSLog(@"Track with id %@ was corrected", self.currentTrack.id); // test
     }];
 }
 

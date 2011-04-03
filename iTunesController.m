@@ -43,6 +43,7 @@
         return;
     
     TrackInfo *track = [state isEqualToString:@"Playing"] ? [self getCurrentTrack] : nil;
+    
     if (delegate != nil)
         [self.delegate currentTrackChangedTo:track];
 }

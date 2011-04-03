@@ -30,7 +30,7 @@
     
     return [Suggestion suggestionWithMessage: NSLocalizedStringFromTable(@"CorrectLyricsSuggestion", @"InfoPlist", nil)
                                       action: context.correctAction 
-                              acceptCallback: ^{ [self.settings wasCorrected:context.trackInfo.id]; } 
+                              acceptCallback: nil 
                              declineCallback: ^{ [self.settings wasDeclinedToCorrect:context.trackInfo.id]; }
     ];
 }

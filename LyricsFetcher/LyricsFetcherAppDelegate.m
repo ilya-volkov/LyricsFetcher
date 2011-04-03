@@ -1,3 +1,4 @@
+#import <QuartzCore/CAAnimation.h>
 #import "LyricsFetcherAppDelegate.h"
 #import "PersistentStorageProvider.h"
 #import "ChartLyricsLyricsProvider.h"
@@ -11,7 +12,7 @@
 #import "CorrectLyricsSuggestionCreator.h"
 #import "SuggestionCreationContext.h"
 #import "Suggestion.h"
-#import "SplitViewDelegate.h"
+#import "MainViewAnimator.h"
 
 #import "LyricsFetcherAppDelegate+Actions.h"
 #import "NSAttributedString+Hyperlink.h"
@@ -38,8 +39,13 @@
 @synthesize suggestionCreator;
 @synthesize chartlyricsLink;
 @synthesize editMode;
-@synthesize splitView;
 @synthesize lyricsText;
+@synthesize suggestionView;
+@synthesize lyricsView;
+@synthesize editButtonsView;
+@synthesize mainViewAnimator;
+@synthesize song;
+@synthesize artist;
 
 - (void)registerDefaultUserSettings {
     NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:
@@ -100,99 +106,76 @@
         [self.lyricsWindow setLevel:NSNormalWindowLevel];
 }
 
-- (void)showSuggestion {
-    // TODO
-}
-
-- (void)hideSuggestion {
-    // TODO
-}
-
-- (void)showEditModeButtons {
-    NSView *lyricsView = [self.splitView.subviews objectAtIndex:1];
-	NSView *buttonsView = [self.splitView.subviews objectAtIndex:2];
-	
-    NSRect targetFrame = NSMakeRect(
-        [buttonsView frame].origin.x, 
-        [buttonsView frame].origin.y - 45.0, 
-        [buttonsView frame].size.width, 
-        [buttonsView frame].size.height
-    );
-    
-	[NSAnimationContext beginGrouping];
-	[[NSAnimationContext currentContext] setDuration:.5];
-	[[buttonsView animator] setFrame: targetFrame];
-	//[[buttonsView animator] setFrame: view1TargetFrame];
-	[NSAnimationContext endGrouping];
-}
-
-- (void)hideEditModeButtons {
-    NSView *lyricsView = [self.splitView.subviews objectAtIndex:1];
-	NSView *buttonsView = [self.splitView.subviews objectAtIndex:2];
-	
-    NSRect targetFrame = NSMakeRect(
-        [buttonsView frame].origin.x, 
-        [buttonsView frame].origin.y + [buttonsView frame].size.height, 
-        [buttonsView frame].size.width, 
-        [buttonsView frame].size.height
-    );
-    
-	[NSAnimationContext beginGrouping];
-	[[NSAnimationContext currentContext] setDuration:1.0];
-	[[buttonsView animator] setFrame: targetFrame];
-	//[[buttonsView animator] setFrame: view1TargetFrame];
-	[NSAnimationContext endGrouping];
+- (void)endEditingOfTheInputs {
+    if (![self.lyricsWindow makeFirstResponder:self.lyricsWindow]) {
+        [self.lyricsWindow endEditingFor:nil];
+    }
 }
 
 - (void)switchToEditMode {
     self.editMode = true;
-    // Concurrent animation !!!
-    [self hideSuggestion];
-    [self showEditModeButtons];
+    
+    [self.mainViewAnimator beginGrouping];
+    [self.mainViewAnimator hideSuggestion];
+    [self.mainViewAnimator showEditButtons];
+    [self.mainViewAnimator animateGroup];
 }
 
 - (void)returnFromEditMode {
     self.editMode = false;
-    [self hideEditModeButtons];
+    
+    [self.mainViewAnimator hideEditButtons];
+    [self currentTrackChangedTo:[self.iTunes getCurrentTrack]];
 }
 
 - (IBAction)acceptSuggestion:(id)sender {
-    [self hideSuggestion];
+    [self.mainViewAnimator hideSuggestion];
     [self.currentSuggestion accept];
 }
 
 - (IBAction)declineSuggestion:(id)sender {
-    [self hideSuggestion];
+    [self.mainViewAnimator hideSuggestion];
     [self.currentSuggestion decline];
 }
 
 - (IBAction)closeSuggestion:(id)sender {
-    [self hideSuggestion];
+    [self.mainViewAnimator hideSuggestion];
+}
+
+- (void)returnFromEditModeSavingChanges:(BOOL)savingChanges {
+    [self endEditingOfTheInputs];
+    
+    if (savingChanges)
+        [self.currentTrack update];
+    else
+        [self.currentTrack reset];
+    
+    [self returnFromEditMode];
 }
 
 - (IBAction)toggleEditMode:(id)sender {
     if (self.editMode)
-        [self returnFromEditMode];
+        [self returnFromEditModeSavingChanges:false];
     else
         [self switchToEditMode];
 }
 
 - (IBAction)searchLyrics:(id)sender {
-    [self.lyricsProvider beginSearchLyricsFor:self.currentTrack.name by:self.currentTrack.artist callback:^(SearchLyricsResult* result){
+    [self.lyricsProvider beginSearchLyricsFor: [self.song stringValue] 
+                                           by: [self.artist stringValue] 
+                                     callback: ^(SearchLyricsResult* result) 
+    {
         [self updateActionsForSearchResult:result];
-        
-        self.currentTrack.lyrics = result.lyrics;
+        [self.currentTrack syncWithSearchResult:result overridingExistingValues:true];
 	}];
 }
 
-- (IBAction)saveLyrics:(id)sender {
-    [self.currentTrack update];
-    [self returnFromEditMode];
+- (IBAction)saveLyrics:(id)sender {    
+    [self returnFromEditModeSavingChanges:true];
 }
 
 - (IBAction)cancelLyricsEditing:(id)sender {
-    [self.currentTrack reset];
-    [self returnFromEditMode];
+    [self returnFromEditModeSavingChanges:false];
 }
 
 - (void)buildChartlyricsLink {
@@ -264,21 +247,24 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    self.mainViewAnimator = [MainViewAnimator animatorWithSuggestion: self.suggestionView 
+                                                          lyricsText: self.lyricsView 
+                                                         editButtons: self.editButtonsView];
     self.lyricsProvider = [ChartLyricsLyricsProvider new];
     self.iTunes = [iTunesController controllerWithDelegate:self];
     self.settings = [Settings settingsWithUserDefaults: [NSUserDefaults standardUserDefaults] 
                              persistentStorageProvider: [PersistentStorageProvider new]];
     
+    [self.mainViewAnimator hideSuggestionImmediately];
+    [self.mainViewAnimator hideEditButtonsImmediately];
+    
     [self dataBindAboutWindow];
     [self createStatusBarItem];
-    [self currentTrackChangedTo:
-    [self.iTunes getCurrentTrack]];
+    [self currentTrackChangedTo:[self.iTunes getCurrentTrack]];
     [self configureCocoaBinding];    
     [self registerValueTransformers];
     [self createSuggestionCreators];
     [self setupLyricsTextStyle];
-    
-    [self.splitView setDelegate:[SplitViewDelegate new]];
 }
 
 - (void)updateSuggestionForSearchResult:(SearchLyricsResult*)result {
@@ -289,9 +275,9 @@
     
     self.currentSuggestion = [self.suggestionCreator createWithContext:context];
     if (self.currentSuggestion != nil)
-        [self showSuggestion];
+        [self.mainViewAnimator showSuggestion];
     else
-        [self hideSuggestion];
+        [self.mainViewAnimator hideSuggestion];
 }
 
 - (void)handleSearchResult:(SearchLyricsResult*)result {
@@ -300,7 +286,7 @@
 }
 
 - (void)currentTrackChangedTo:(TrackInfo*)track {
-    if (self.editMode)
+    if (self.editMode || [self.currentTrack isEqualToTrackInfo:track])
         return;
     
     if (self.settings.autoUpdateTracksWithEmptyLyrics)
@@ -310,21 +296,18 @@
     
     if (track == nil) {
         [self handleSearchResult:nil];
-        
         return;
     }
     
     [self.lyricsProvider beginSearchLyricsFor:track.name by:track.artist callback:^(SearchLyricsResult* result){
         [self handleSearchResult:result];
-        
-        if ([self.currentTrack.lyrics length] == 0)
-            self.currentTrack.lyrics = result.lyrics;
+        [self.currentTrack syncWithSearchResult:result];
 	}];
 }
 
 - (NSInteger)getLyricsWindowLevel {
     return self.settings.keepLyricsWindowInFrontOfOthers ? NSPopUpMenuWindowLevel 
-    : NSNormalWindowLevel;
+                                                         : NSNormalWindowLevel;
 }
 
 - (void)showWindow:(NSWindow*)window {

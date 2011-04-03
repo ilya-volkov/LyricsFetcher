@@ -29,7 +29,7 @@
     
     return [Suggestion suggestionWithMessage: NSLocalizedStringFromTable(@"SubmitLyricsSuggestion", @"InfoPlist", nil)
                                       action: context.addAction 
-                              acceptCallback: ^{ [self.settings wasAdded:context.trackInfo.id]; } 
+                              acceptCallback: nil 
                              declineCallback: ^{ [self.settings wasDeclinedToAdd:context.trackInfo.id]; }
     ];
 }

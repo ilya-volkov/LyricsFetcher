@@ -9,6 +9,7 @@
 @class Settings;
 @class Suggestion;
 @class SuggestionCreator;
+@class MainViewAnimator;
 
 @interface LyricsFetcherAppDelegate : NSObject <NSApplicationDelegate, iTunesControllerDelegate>
 
@@ -31,8 +32,12 @@
 @property IBOutlet NSMenu *menu;
 @property IBOutlet NSMenuItem *currentTrackInfoMenuItem;
 @property IBOutlet NSTextField *chartlyricsLink;
-@property IBOutlet NSSplitView *splitView;
 @property IBOutlet NSTextView *lyricsText;
+@property IBOutlet NSView *suggestionView;
+@property IBOutlet NSView *lyricsView;
+@property IBOutlet NSView *editButtonsView;
+@property IBOutlet NSTextField *artist;
+@property IBOutlet NSTextField *song;
 
 @property ChartLyricsLyricsProvider *lyricsProvider;
 @property iTunesController *iTunes;
@@ -45,5 +50,6 @@
 @property Suggestion *currentSuggestion;
 @property SuggestionCreator *suggestionCreator;
 @property BOOL editMode;
+@property MainViewAnimator* mainViewAnimator;
 
 @end
