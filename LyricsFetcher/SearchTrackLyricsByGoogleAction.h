@@ -5,7 +5,7 @@
 
 @interface SearchTrackLyricsByGoogleAction : OpenUrlAction
 
--(id)initWithTrackInfo:(TrackInfo*)track callback:(void(^)())callback;
+-(id)initWithTrackInfo:(TrackInfo*)track beforeCallback:(ParameterlessCallback)beforeCallback afterCallback:(ParameterlessCallback)afterCallback;
 
 @property TrackInfo* track;
 

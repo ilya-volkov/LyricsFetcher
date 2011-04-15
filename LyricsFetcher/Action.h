@@ -6,12 +6,14 @@ typedef void (^ParameterlessCallback)();
 
 @interface Action : NSObject
 
-+(Action*)actionWithURL:(NSURL*)url callback:(ParameterlessCallback)callback;
-+(Action*)actionWithTrackInfo:(TrackInfo*)track callback:(ParameterlessCallback)callback;
++(Action*)actionWithURL:(NSURL*)url beforeCallback:(ParameterlessCallback)beforeCallback afterCallback:(ParameterlessCallback)afterCallback;
++(Action*)actionWithTrackInfo:(TrackInfo*)track beforeCallback:(ParameterlessCallback)beforeCallback afterCallback:(ParameterlessCallback)afterCallback;
 
--(id)initWithCallback:(ParameterlessCallback)callback;
+-(id)initWithBeforeCallback:(ParameterlessCallback)beforeCallback afterCallback:(ParameterlessCallback)afterCallback;
 -(void)perform;
+-(void)performCore;
 
-@property (copy) ParameterlessCallback actionCallback;
+@property (copy) ParameterlessCallback beforeCallback;
+@property (copy) ParameterlessCallback afterCallback;
 
 @end

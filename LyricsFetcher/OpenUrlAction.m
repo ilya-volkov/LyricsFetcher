@@ -4,8 +4,8 @@
 
 @synthesize url;
 
--(id)initWithURL:(NSURL*)url callback:(void(^)())callback {
-    self = [super initWithCallback:callback];
+-(id)initWithURL:(NSURL*)url beforeCallback:(ParameterlessCallback)beforeCallback afterCallback:(ParameterlessCallback)afterCallback {
+    self = [super initWithBeforeCallback:beforeCallback afterCallback:afterCallback];
     if (self != nil) {
         self.url = url;
     }
@@ -13,9 +13,8 @@
     return self;
 }
 
--(void)perform {
+-(void)performCore {
     [[NSWorkspace sharedWorkspace] openURL:self.url];
-    [super perform];
 }
 
 @end

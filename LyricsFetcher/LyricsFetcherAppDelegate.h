@@ -22,6 +22,7 @@
 - (IBAction)showPreferencesWindow:(id)sender;
 - (IBAction)startOnSystemStartupCheckboxToggle:(NSButton*)sender;
 - (IBAction)keepLyricsWindowInFrontOfOthersCheckboxToggle:(NSButton*)sender;
+- (void)switchToEditMode;
 
 @property IBOutlet NSWindow *lyricsWindow;
 @property IBOutlet NSWindow *aboutWindow;
@@ -38,7 +39,8 @@
 @property IBOutlet NSView *editButtonsView;
 @property IBOutlet NSTextField *artist;
 @property IBOutlet NSTextField *song;
-@property IBOutlet NSButton* toggleEditModeButton;
+@property IBOutlet NSButton *toggleEditModeButton;
+@property IBOutlet NSProgressIndicator *lyricsLoadingProgress;
 
 @property ChartLyricsLyricsProvider *lyricsProvider;
 @property iTunesController *iTunes;

@@ -8,13 +8,15 @@
 @private
     
     iTunesTrack *internalTrack;
+    NSString *lyricsSnapshot;
 }
 
 + (TrackInfo*)trackInfoWithiTunesTrack:(iTunesTrack*)track;
 
 - (id)initWithiTunesTrack:(iTunesTrack*)track;
 - (void)update;
-- (void)reset;
+- (void)saveState;
+- (void)restoreState;
 - (BOOL)isEqualToTrackInfo:(TrackInfo*)track;
 - (void)syncWithSearchResult:(SearchLyricsResult*)searchResult;
 - (void)syncWithSearchResult:(SearchLyricsResult*)searchResult overridingExistingValues:(BOOL)override;

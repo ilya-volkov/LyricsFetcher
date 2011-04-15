@@ -1,7 +1,7 @@
 {
-	"CorrectLyricsSuggestion" = "Your version of the lyrics is different from the one that Chartlyrics.com provides. Correct the lyrics on Chartlyrics.com?";
+	"CorrectLyricsSuggestion" = "Your version of the lyrics is different from the one that Chartlyrics provides. Correct the lyrics on Chartlyrics?";
 	"CurrentTrackInfoNotExists" = "No Current Track";
-	"SubmitLyricsSuggestion" = "You have the lyrics that are missing on Chartlyrics.com . Submit the lyrics to Chartlyrics.com?";
-	SwitchToEditMode = "Switch to edit mode";
 	ReturnFromEditMode = "Return from edit mode";
+	"SubmitLyricsSuggestion" = "You have the lyrics that are missing on Chartlyrics. Submit the lyrics to Chartlyrics?";
+	SwitchToEditMode = "Switch to edit mode";
 }

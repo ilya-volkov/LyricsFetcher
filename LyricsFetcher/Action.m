@@ -5,28 +5,35 @@
 
 @implementation Action
 
-@synthesize actionCallback;
+@synthesize beforeCallback;
+@synthesize afterCallback;
 
-+(Action*)actionWithURL:(NSURL*)url callback:(ParameterlessCallback)callback {
-    return [[OpenUrlAction alloc] initWithURL:url callback:callback];
++(Action*)actionWithURL:(NSURL*)url beforeCallback:(ParameterlessCallback)beforeCallback afterCallback:(ParameterlessCallback)afterCallback {
+    return [[OpenUrlAction alloc] initWithURL:url beforeCallback:beforeCallback afterCallback:afterCallback];
 }
 
-+(Action*)actionWithTrackInfo:(TrackInfo*)track callback:(ParameterlessCallback)callback {
-    return [[SearchTrackLyricsByGoogleAction alloc] initWithTrackInfo:track callback:callback];
++(Action*)actionWithTrackInfo:(TrackInfo*)track beforeCallback:(ParameterlessCallback)beforeCallback afterCallback:(ParameterlessCallback)afterCallback {
+    return [[SearchTrackLyricsByGoogleAction alloc] initWithTrackInfo:track beforeCallback:beforeCallback afterCallback:afterCallback];
 }
 
--(id)initWithCallback:(ParameterlessCallback)callback {
+-(id)initWithBeforeCallback:(ParameterlessCallback)beforeCallback afterCallback:(ParameterlessCallback)afterCallback {
     self = [super init];
     if (self != nil) {
-        self.actionCallback = callback;
+        self.beforeCallback = beforeCallback;
+        self.afterCallback = afterCallback;
     }
     
     return self;
 }
 
 -(void)perform {
-    if (self.actionCallback != nil)
-        self.actionCallback();
+    if (self.beforeCallback != nil)
+        self.beforeCallback();
+    
+    [self performCore];
+    
+    if (self.afterCallback != nil)
+        self.afterCallback();
 }
 
 @end

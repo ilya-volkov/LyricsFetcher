@@ -12,25 +12,26 @@
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<string>NSPopUpButtonCell</string>
 			<string>NSTextView</string>
+			<string>NSMenu</string>
+			<string>NSButton</string>
+			<string>NSCustomObject</string>
+			<string>NSImageView</string>
+			<string>NSImageCell</string>
+			<string>NSCustomView</string>
+			<string>NSTextField</string>
+			<string>NSWindowTemplate</string>
+			<string>NSTextFieldCell</string>
+			<string>NSButtonCell</string>
+			<string>NSBox</string>
+			<string>NSPopUpButtonCell</string>
+			<string>NSView</string>
+			<string>NSScrollView</string>
+			<string>NSUserDefaultsController</string>
+			<string>NSProgressIndicator</string>
 			<string>NSPopUpButton</string>
 			<string>NSScroller</string>
 			<string>NSMenuItem</string>
-			<string>NSMenu</string>
-			<string>NSTextFieldCell</string>
-			<string>NSButtonCell</string>
-			<string>NSImageView</string>
-			<string>NSButton</string>
-			<string>NSImageCell</string>
-			<string>NSScrollView</string>
-			<string>NSBox</string>
-			<string>NSCustomObject</string>
-			<string>NSCustomView</string>
-			<string>NSView</string>
-			<string>NSWindowTemplate</string>
-			<string>NSTextField</string>
-			<string>NSUserDefaultsController</string>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -73,6 +74,18 @@
 							<int key="NSvFlags">266</int>
 							<object class="NSMutableArray" key="NSSubviews">
 								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSProgressIndicator" id="112838227">
+									<reference key="NSNextResponder" ref="629058385"/>
+									<int key="NSvFlags">1313</int>
+									<object class="NSPSMatrix" key="NSDrawMatrix"/>
+									<string key="NSFrame">{{421, 9}, {16, 16}}</string>
+									<reference key="NSSuperview" ref="629058385"/>
+									<reference key="NSWindow"/>
+									<reference key="NSNextKeyView"/>
+									<int key="NSViewLayerContentsRedrawPolicy">2</int>
+									<int key="NSpiFlags">28938</int>
+									<double key="NSMaxValue">100</double>
+								</object>
 								<object class="NSBox" id="477765501">
 									<reference key="NSNextResponder" ref="629058385"/>
 									<int key="NSvFlags">10</int>
@@ -113,7 +126,7 @@
 								<object class="NSButton" id="308796499">
 									<reference key="NSNextResponder" ref="629058385"/>
 									<int key="NSvFlags">265</int>
-									<string key="NSFrame">{{417, 92}, {21, 20}}</string>
+									<string key="NSFrame">{{417, 88}, {21, 20}}</string>
 									<reference key="NSSuperview" ref="629058385"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="964821184"/>
@@ -237,7 +250,7 @@
 											<string>NeXT TIFF v4.0 pasteboard type</string>
 										</object>
 									</object>
-									<string key="NSFrame">{{20, 20}, {88, 83}}</string>
+									<string key="NSFrame">{{17, 17}, {85, 85}}</string>
 									<reference key="NSSuperview" ref="629058385"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="998213176"/>
@@ -249,13 +262,13 @@
 										<reference key="NSSupport" ref="89806752"/>
 										<int key="NSAlign">0</int>
 										<int key="NSScale">0</int>
-										<int key="NSStyle">0</int>
+										<int key="NSStyle">3</int>
 										<bool key="NSAnimates">NO</bool>
 									</object>
 									<bool key="NSEditable">YES</bool>
 								</object>
 							</object>
-							<string key="NSFrame">{{0, 521}, {448, 123}}</string>
+							<string key="NSFrame">{{0, 525}, {448, 119}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="695290464"/>
@@ -366,7 +379,7 @@
 												<object class="NSTextView" id="333863807">
 													<reference key="NSNextResponder" ref="827462481"/>
 													<int key="NSvFlags">2322</int>
-													<string key="NSFrameSize">{452, 14}</string>
+													<string key="NSFrame">{{0, 42}, {452, 14}}</string>
 													<reference key="NSSuperview" ref="827462481"/>
 													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="746126342"/>
@@ -448,7 +461,7 @@
 													<nil key="NSDelegate"/>
 												</object>
 											</object>
-											<string key="NSFrameSize">{448, 333}</string>
+											<string key="NSFrameSize">{448, 352}</string>
 											<reference key="NSSuperview" ref="655987712"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="333863807"/>
@@ -464,10 +477,10 @@
 										<object class="NSScroller" id="746126342">
 											<reference key="NSNextResponder" ref="655987712"/>
 											<int key="NSvFlags">-2147483392</int>
-											<string key="NSFrame">{{431, 2}, {15, 250}}</string>
+											<string key="NSFrame">{{433, 0}, {15, 333}}</string>
 											<reference key="NSSuperview" ref="655987712"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="237591003"/>
+											<reference key="NSNextKeyView" ref="112838227"/>
 											<int key="NSViewLayerContentsRedrawPolicy">2</int>
 											<reference key="NSTarget" ref="655987712"/>
 											<string key="NSAction">_doScroller:</string>
@@ -490,7 +503,7 @@
 											<double key="NSPercent">0.94565218687057495</double>
 										</object>
 									</object>
-									<string key="NSFrame">{{0, 40}, {448, 333}}</string>
+									<string key="NSFrame">{{0, 39}, {448, 352}}</string>
 									<reference key="NSSuperview" ref="515679246"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="789651707"/>
@@ -508,7 +521,7 @@
 										<object class="NSButton" id="412377940">
 											<reference key="NSNextResponder" ref="106794880"/>
 											<int key="NSvFlags">265</int>
-											<string key="NSFrame">{{427, 102}, {15, 20}}</string>
+											<string key="NSFrame">{{423, 87}, {15, 20}}</string>
 											<reference key="NSSuperview" ref="106794880"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="845023952"/>
@@ -535,7 +548,7 @@
 										<object class="NSTextField" id="845023952">
 											<reference key="NSNextResponder" ref="106794880"/>
 											<int key="NSvFlags">266</int>
-											<string key="NSFrame">{{25, 40}, {383, 57}}</string>
+											<string key="NSFrame">{{33, 51}, {383, 34}}</string>
 											<reference key="NSSuperview" ref="106794880"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="350631055"/>
@@ -546,7 +559,7 @@
 												<int key="NSCellFlags2">205520896</int>
 												<string key="NSContents"/>
 												<reference key="NSSupport" ref="89806752"/>
-												<string key="NSPlaceholderString">Your version of the lyrics is different from the one that Chartlyrics.com provides. Correct the lyrics on Chartlyrics.com?</string>
+												<string key="NSPlaceholderString">Your version of the lyrics is different from the one that Chartlyrics provides. Correct the lyrics on Chartlyrics site?</string>
 												<reference key="NSControlView" ref="845023952"/>
 												<bool key="NSDrawsBackground">YES</bool>
 												<reference key="NSBackgroundColor" ref="403800515"/>
@@ -600,15 +613,15 @@
 											</object>
 										</object>
 									</object>
-									<string key="NSFrame">{{0, 373}, {448, 127}}</string>
+									<string key="NSFrame">{{0, 390}, {448, 115}}</string>
 									<reference key="NSSuperview" ref="515679246"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="412377940"/>
 									<int key="NSViewLayerContentsRedrawPolicy">2</int>
-									<string key="NSClassName">NSView</string>
+									<string key="NSClassName">GradientView</string>
 								</object>
 							</object>
-							<string key="NSFrame">{{0, 22}, {448, 500}}</string>
+							<string key="NSFrame">{{0, 22}, {448, 505}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="106794880"/>
@@ -1736,14 +1749,6 @@
 					<int key="connectionID">951</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">initialFirstResponder</string>
-						<reference key="source" ref="972006081"/>
-						<reference key="destination" ref="350631055"/>
-					</object>
-					<int key="connectionID">961</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: editMode</string>
 						<reference key="source" ref="308796499"/>
@@ -1758,6 +1763,42 @@
 						</object>
 					</object>
 					<int key="connectionID">962</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">initialFirstResponder</string>
+						<reference key="source" ref="972006081"/>
+						<reference key="destination" ref="655987712"/>
+					</object>
+					<int key="connectionID">963</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">lyricsLoadingProgress</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="112838227"/>
+					</object>
+					<int key="connectionID">968</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: self</string>
+						<reference key="source" ref="630410339"/>
+						<reference key="destination" ref="976324537"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="630410339"/>
+							<reference key="NSDestination" ref="976324537"/>
+							<string key="NSLabel">enabled: self</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSIsNil</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">970</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2095,12 +2136,13 @@
 						<reference key="object" ref="629058385"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="477765501"/>
+							<reference ref="308796499"/>
 							<reference ref="695290464"/>
 							<reference ref="998213176"/>
-							<reference ref="990286609"/>
-							<reference ref="477765501"/>
 							<reference ref="964821184"/>
-							<reference ref="308796499"/>
+							<reference ref="990286609"/>
+							<reference ref="112838227"/>
 						</object>
 						<reference key="parent" ref="439893737"/>
 						<string key="objectName">Track Info View</string>
@@ -2215,8 +2257,8 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="106794880"/>
-							<reference ref="655987712"/>
 							<reference ref="237591003"/>
+							<reference ref="655987712"/>
 						</object>
 						<reference key="parent" ref="439893737"/>
 						<string key="objectName">Main View</string>
@@ -2279,42 +2321,14 @@
 						<reference key="parent" ref="220299786"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">612</int>
-						<reference key="object" ref="655987712"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="333863807"/>
-							<reference ref="789651707"/>
-							<reference ref="746126342"/>
-						</object>
-						<reference key="parent" ref="515679246"/>
-						<string key="objectName">Lyrics View</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">615</int>
-						<reference key="object" ref="333863807"/>
-						<reference key="parent" ref="655987712"/>
-						<string key="objectName">Text View</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">614</int>
-						<reference key="object" ref="789651707"/>
-						<reference key="parent" ref="655987712"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">613</int>
-						<reference key="object" ref="746126342"/>
-						<reference key="parent" ref="655987712"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">610</int>
 						<reference key="object" ref="106794880"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="412377940"/>
+							<reference ref="845023952"/>
 							<reference ref="350631055"/>
 							<reference ref="490840482"/>
-							<reference ref="845023952"/>
-							<reference ref="412377940"/>
 						</object>
 						<reference key="parent" ref="515679246"/>
 						<string key="objectName">Suggestion View</string>
@@ -2383,6 +2397,40 @@
 						<int key="objectID">959</int>
 						<reference key="object" ref="477765501"/>
 						<reference key="parent" ref="629058385"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">966</int>
+						<reference key="object" ref="112838227"/>
+						<reference key="parent" ref="629058385"/>
+						<string key="objectName">Lyrics Loading Progress</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">612</int>
+						<reference key="object" ref="655987712"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="333863807"/>
+							<reference ref="789651707"/>
+							<reference ref="746126342"/>
+						</object>
+						<reference key="parent" ref="515679246"/>
+						<string key="objectName">Lyrics View</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">613</int>
+						<reference key="object" ref="746126342"/>
+						<reference key="parent" ref="655987712"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">614</int>
+						<reference key="object" ref="789651707"/>
+						<reference key="parent" ref="655987712"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">615</int>
+						<reference key="object" ref="333863807"/>
+						<reference key="parent" ref="655987712"/>
+						<string key="objectName">Text View</string>
 					</object>
 				</object>
 			</object>
@@ -2483,6 +2531,7 @@
 					<string>859.IBPluginDependency</string>
 					<string>882.IBPluginDependency</string>
 					<string>959.IBPluginDependency</string>
+					<string>966.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2579,6 +2628,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -2593,11 +2643,19 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">962</int>
+			<int key="maxID">993</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBPartialClassDescription">
+					<string key="className">GradientView</string>
+					<string key="superclassName">NSView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/GradientView.h</string>
+					</object>
+				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">LyricsFetcherAppDelegate</string>
 					<string key="superclassName">NSObject</string>
@@ -2613,6 +2671,8 @@
 							<string>showLyricsWindow:</string>
 							<string>showPreferencesWindow:</string>
 							<string>startOnSystemStartupCheckboxToggle:</string>
+							<string>startProgress:</string>
+							<string>stopProgress:</string>
 							<string>toggleEditMode:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -2625,6 +2685,8 @@
 							<string>id</string>
 							<string>id</string>
 							<string>NSButton</string>
+							<string>id</string>
+							<string>id</string>
 							<string>id</string>
 						</object>
 					</object>
@@ -2640,6 +2702,8 @@
 							<string>showLyricsWindow:</string>
 							<string>showPreferencesWindow:</string>
 							<string>startOnSystemStartupCheckboxToggle:</string>
+							<string>startProgress:</string>
+							<string>stopProgress:</string>
 							<string>toggleEditMode:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -2677,6 +2741,14 @@
 								<string key="candidateClassName">NSButton</string>
 							</object>
 							<object class="IBActionInfo">
+								<string key="name">startProgress:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">stopProgress:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
 								<string key="name">toggleEditMode:</string>
 								<string key="candidateClassName">id</string>
 							</object>
@@ -2693,6 +2765,7 @@
 							<string>copyright</string>
 							<string>currentTrackInfoMenuItem</string>
 							<string>editButtonsView</string>
+							<string>lyricsLoadingProgress</string>
 							<string>lyricsText</string>
 							<string>lyricsView</string>
 							<string>lyricsWindow</string>
@@ -2712,6 +2785,7 @@
 							<string>NSTextField</string>
 							<string>NSMenuItem</string>
 							<string>NSView</string>
+							<string>NSProgressIndicator</string>
 							<string>NSTextView</string>
 							<string>NSView</string>
 							<string>NSWindow</string>
@@ -2734,6 +2808,7 @@
 							<string>copyright</string>
 							<string>currentTrackInfoMenuItem</string>
 							<string>editButtonsView</string>
+							<string>lyricsLoadingProgress</string>
 							<string>lyricsText</string>
 							<string>lyricsView</string>
 							<string>lyricsWindow</string>
@@ -2773,6 +2848,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">editButtonsView</string>
 								<string key="candidateClassName">NSView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">lyricsLoadingProgress</string>
+								<string key="candidateClassName">NSProgressIndicator</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">lyricsText</string>

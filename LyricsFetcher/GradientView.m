@@ -3,11 +3,9 @@
 @implementation GradientView
 
 - (void)drawRect:(NSRect)dirtyRect {
-    NSColor *startColor = [NSColor blackColor];
-    NSColor *endColor = [NSColor colorWithCalibratedRed:.50 green:.50 blue:.50 alpha:1.0];
-    
-    NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:startColor endingColor:endColor];
-    [gradient drawInRect:[self bounds] angle:270.0];
+    NSColor *color = [NSColor colorWithCalibratedRed:.972 green:.929 blue:.713 alpha:1.0];
+    [color setFill];
+    [NSBezierPath fillRect:[self bounds]];
 }
 
 @end

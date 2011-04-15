@@ -39,7 +39,7 @@ void invocationCallback(WSMethodInvocationRef invocation, void *info, CFDictiona
     WSMethodInvocationSetProperty(ref, kWSSOAPMethodNamespaceURI, (CFStringRef)namespace);
     WSMethodInvocationSetProperty(ref, kWSHTTPExtraHeaders, (CFDictionaryRef)headers);
     WSMethodInvocationSetProperty(ref, kWSHTTPFollowsRedirects, kCFBooleanTrue);
-	WSMethodInvocationSetProperty(ref, kWSMethodInvocationTimeoutValue, (CFNumberRef)[NSNumber numberWithInt: 10]);
+	WSMethodInvocationSetProperty(ref, kWSMethodInvocationTimeoutValue, (CFNumberRef)[NSNumber numberWithInt: 20]);
 	
 	// set debug properties
     WSMethodInvocationSetProperty(ref, kWSDebugIncomingBody, kCFBooleanTrue);

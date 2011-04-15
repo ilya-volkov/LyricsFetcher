@@ -6,12 +6,19 @@
 
 @implementation LyricsFetcherAppDelegate (Actions)
 
+- (void)pasteTextToPasteboard:(NSString*)text {
+    NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+    [pasteboard clearContents];
+    [pasteboard writeObjects:[NSArray arrayWithObject:text]];
+}
+
 - (Action*)createAddAction:(SearchLyricsResult*)result {
     if (result == nil || ![result canAddLyrics])
         return nil;
         
-    
-    return [Action actionWithURL:result.lyricsAddUrl callback:^(){
+    return [Action actionWithURL:result.lyricsAddUrl beforeCallback:^(){
+        [self pasteTextToPasteboard:self.currentTrack.lyrics];
+    } afterCallback:^(){
         [self.settings wasAdded:self.currentTrack.id];
     }];
 }
@@ -19,9 +26,10 @@
 - (Action*)createCorrectAction:(SearchLyricsResult*)result {
     if (result == nil || ![result canCorrectLyrics])
         return nil;
-
     
-    return [Action actionWithURL:result.lyricsCorrectUrl callback:^(){
+    return [Action actionWithURL:result.lyricsCorrectUrl beforeCallback:^(){
+        [self pasteTextToPasteboard:self.currentTrack.lyrics];
+    } afterCallback:^{
         [self.settings wasCorrected:self.currentTrack.id];
     }];
 }
@@ -30,7 +38,12 @@
     if (self.currentTrack == nil)
         return nil;
     
-    return [Action actionWithTrackInfo:self.currentTrack callback:nil];
+    return [Action actionWithTrackInfo:self.currentTrack beforeCallback:^{
+        if (!self.editMode) {
+            self.editMode = true;
+            [self switchToEditMode];
+        }
+    } afterCallback:nil];
 }
 
 - (void)updateActionsForSearchResult:(SearchLyricsResult*)result {

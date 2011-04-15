@@ -3,7 +3,7 @@
 
 @interface OpenUrlAction : Action
 
--(id)initWithURL:(NSURL*)url callback:(void(^)())callback;
+-(id)initWithURL:(NSURL*)url beforeCallback:(ParameterlessCallback)beforeCallback afterCallback:(ParameterlessCallback)afterCallback;
 
 @property (copy) NSURL *url;
 

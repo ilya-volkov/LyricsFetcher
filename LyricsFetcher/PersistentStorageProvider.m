@@ -61,9 +61,10 @@
 
 - (NSURL*)applicationFilesDirectory {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *libraryURL = [[fileManager URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] lastObject];
+    NSURL *applicationSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
+    NSString *bundleIdentifier = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
     
-    return [libraryURL URLByAppendingPathComponent:@"LyricsFetcher"];
+    return [applicationSupportURL URLByAppendingPathComponent:bundleIdentifier];
 }
 
 - (NSManagedObjectModel *)managedObjectModel {
@@ -113,7 +114,7 @@
     
     NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"LyricsFetcher.storedata"];
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
-    if ([persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error] == nil) {
+    if ([persistentStoreCoordinator addPersistentStoreWithType:NSBinaryStoreType configuration:nil URL:url options:nil error:&error] == nil) {
         NSLog(@"%@:failed to add persistent store", [self class]);
         return nil;
     }

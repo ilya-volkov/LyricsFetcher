@@ -47,6 +47,7 @@
 @synthesize song;
 @synthesize artist;
 @synthesize toggleEditModeButton;
+@synthesize lyricsLoadingProgress;
 
 - (void)registerDefaultUserSettings {
     NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfFile:
@@ -114,6 +115,7 @@
 }
 
 - (void)switchToEditMode {
+    [self.currentTrack saveState];
     [self.mainViewAnimator beginGrouping];
     [self.mainViewAnimator hideSuggestion];
     [self.mainViewAnimator showEditButtons];
@@ -121,8 +123,8 @@
 }
 
 - (void)returnFromEditMode {
-    [self.mainViewAnimator hideEditButtons];
     [self currentTrackChangedTo:[self.iTunes getCurrentTrack]];
+    [self.mainViewAnimator hideEditButtons];
 }
 
 - (IBAction)acceptSuggestion:(id)sender {
@@ -141,11 +143,11 @@
 
 - (void)returnFromEditModeSavingChanges:(BOOL)savingChanges {
     [self endEditingOfTheInputs];
-    
+
     if (savingChanges)
         [self.currentTrack update];
     else
-        [self.currentTrack reset];
+        [self.currentTrack restoreState];
     
     [self returnFromEditMode];
 }
@@ -163,20 +165,29 @@
 }
 
 - (IBAction)searchLyrics:(id)sender {
+    [self.lyricsLoadingProgress startAnimation:self];
     [self.lyricsProvider beginSearchLyricsFor: [self.song stringValue] 
                                            by: [self.artist stringValue] 
                                      callback: ^(SearchLyricsResult* result) 
     {
+        TrackInfo *track = self.currentTrack;
+        
+        [self.lyricsLoadingProgress stopAnimation:self];
+        if (![self.currentTrack isEqualToTrackInfo:track])
+            return;
+        
         [self updateActionsForSearchResult:result];
         [self.currentTrack syncWithSearchResult:result overridingExistingValues:true];
 	}];
 }
 
 - (IBAction)saveLyrics:(id)sender {    
+    self.editMode = false;
     [self returnFromEditModeSavingChanges:true];
 }
 
 - (IBAction)cancelLyricsEditing:(id)sender {
+    self.editMode = false;
     [self returnFromEditModeSavingChanges:false];
 }
 
@@ -214,16 +225,7 @@
 	}
 }
 
-// IV: Binding menu item title makes menu item enabled, 
-// even if the target/action is nil and enabled property of the item is set to false. 
-// This workaround permanently disables menu item.
-- (void)disableCurrentTrackInfoMenuItem {
-    NSNumber *alwaysNo = [NSNumber numberWithBool:NO];
-    [self.currentTrackInfoMenuItem bind:@"enabled" toObject:alwaysNo withKeyPath:@"boolValue" options:nil];
-}
-
-- (void)configureCocoaBinding {    
-    [self disableCurrentTrackInfoMenuItem];
+- (void)configureCocoaBinding {
     [self.lyricsText bind:@"selectable" toObject:self withKeyPath:@"editMode" options:nil];
 }
 
@@ -305,7 +307,14 @@
         return;
     }
     
+    [self.lyricsLoadingProgress startAnimation:self];
     [self.lyricsProvider beginSearchLyricsFor:track.name by:track.artist callback:^(SearchLyricsResult* result){
+        TrackInfo *track = self.currentTrack;
+        
+        [self.lyricsLoadingProgress stopAnimation:self];
+        if (![self.currentTrack isEqualToTrackInfo:track])
+            return;
+        
         [self handleSearchResult:result];
         [self.currentTrack syncWithSearchResult:result];
 	}];
@@ -335,6 +344,9 @@
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
+    if (self.settings.autoUpdateTracksWithEmptyLyrics)
+        [self.currentTrack update];
+    
     [self.settings saveChanges];
     [[NSStatusBar systemStatusBar] removeStatusItem:self.statusBarItem];
     

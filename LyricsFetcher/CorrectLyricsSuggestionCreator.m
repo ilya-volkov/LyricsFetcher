@@ -5,6 +5,8 @@
 #import "SearchLyricsResult.h"
 #import "Suggestion.h"
 
+#import "NSString+Extensions.h"
+
 @implementation CorrectLyricsSuggestionCreator
 
 + (SuggestionCreator*)creatorWithSettings:(Settings*)settings nextCreator:(SuggestionCreator*)creator {
@@ -25,7 +27,7 @@
     
     if (!([context.trackInfo.lyrics length] > 0 
         && [context.searchResult.lyrics length] > 0
-        && ![context.trackInfo.lyrics isEqualToString:context.searchResult.lyrics]))
+        && ![context.trackInfo.lyrics isEqualToStringIgnoreWhitespace:context.searchResult.lyrics]))
         return nil;
     
     return [Suggestion suggestionWithMessage: NSLocalizedString(@"CorrectLyricsSuggestion", nil)
