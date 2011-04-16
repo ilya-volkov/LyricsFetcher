@@ -1,7 +1,7 @@
 #import <QuartzCore/CAAnimation.h>
 #import "LyricsFetcherAppDelegate.h"
 #import "PersistentStorageProvider.h"
-#import "ChartLyricsLyricsProvider.h"
+#import "HTTPGETChartLyricsLyricsProvider.h"
 #import "SearchLyricsResult.h"
 #import "iTunesController.h"
 #import "TrackInfo.h"
@@ -254,7 +254,7 @@
     self.mainViewAnimator = [MainViewAnimator animatorWithSuggestion: self.suggestionView 
                                                           lyricsText: self.lyricsView 
                                                          editButtons: self.editButtonsView];
-    self.lyricsProvider = [ChartLyricsLyricsProvider new];
+    self.lyricsProvider = [HTTPGETChartLyricsLyricsProvider new];
     self.iTunes = [iTunesController controllerWithDelegate:self];
     self.settings = [Settings settingsWithUserDefaults: [NSUserDefaults standardUserDefaults] 
                              persistentStorageProvider: [PersistentStorageProvider new]];

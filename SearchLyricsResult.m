@@ -12,12 +12,13 @@
 + (SearchLyricsResult*) searchResultWithDictionary:(NSDictionary*)dictionary {
 	SearchLyricsResult *result = [SearchLyricsResult new];
     
-	result.trackId		    = [dictionary objectForKey:@"TrackId"];
-	result.lyricsId		    = [dictionary objectForKey:@"LyricId"];
+    NSNumber *n1 = [NSNumber numberWithInt:[[dictionary objectForKey:@"TrackId"] intValue]];
+	result.trackId		    = n1;
+    NSNumber *n2 = [NSNumber numberWithInt:[[dictionary objectForKey:@"LyricId"] intValue]];
+	result.lyricsId		    = n2;
 	result.lyricsUrl	    = [NSURL URLWithString:[dictionary objectForKey:@"LyricUrl"]];
 	result.lyricsCorrectUrl = [NSURL URLWithString:[dictionary objectForKey:@"LyricCorrectUrl"]];
-	NSString *unescapedLyrics = (NSNull*)[dictionary objectForKey:@"Lyric"] == [NSNull null] ? [NSString string] 
-                                                                                             : [dictionary objectForKey:@"Lyric"];
+    NSString *unescapedLyrics = [dictionary objectForKey:@"Lyric"];
 	
     result.lyrics = (NSString*)CFXMLCreateStringByUnescapingEntities(NULL, (CFStringRef)unescapedLyrics, NULL);
         

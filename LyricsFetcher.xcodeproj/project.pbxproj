@@ -26,10 +26,10 @@
 		FD20F7DA13327FF1005997D1 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD20F7D913327FF1005997D1 /* ScriptingBridge.framework */; };
 		FD20F7DD13329539005997D1 /* lyricsFetcherMain.png in Resources */ = {isa = PBXBuildFile; fileRef = FD20F7DB13329539005997D1 /* lyricsFetcherMain.png */; };
 		FD20F7DE13329539005997D1 /* lyricsFetcherStatus.png in Resources */ = {isa = PBXBuildFile; fileRef = FD20F7DC13329539005997D1 /* lyricsFetcherStatus.png */; };
+		FD4F84FA1358CE37004D2C04 /* HTTPGETChartLyricsLyricsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4F84F91358CE37004D2C04 /* HTTPGETChartLyricsLyricsProvider.m */; };
 		FD62FA5113329E5500E06A81 /* NSArray+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5013329E5500E06A81 /* NSArray+Extensions.m */; };
 		FD62FA5813329E7100E06A81 /* iTunesController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5413329E7100E06A81 /* iTunesController.m */; };
 		FD62FA5913329E7100E06A81 /* TrackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5713329E7100E06A81 /* TrackInfo.m */; };
-		FD62FA5E13329E9800E06A81 /* ChartLyricsLyricsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5B13329E9800E06A81 /* ChartLyricsLyricsProvider.m */; };
 		FD62FA5F13329E9800E06A81 /* SearchLyricsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = FD62FA5D13329E9800E06A81 /* SearchLyricsResult.m */; };
 		FD62FA911334CD5400E06A81 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD62FA901334CD5400E06A81 /* UserDefaults.plist */; };
 		FD6BD7391343AB5B00725811 /* LyricsFetcherAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6BD7381343AB5900725811 /* LyricsFetcherAppDelegate.m */; };
@@ -92,6 +92,8 @@
 		FD20F7D913327FF1005997D1 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		FD20F7DB13329539005997D1 /* lyricsFetcherMain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lyricsFetcherMain.png; sourceTree = "<group>"; };
 		FD20F7DC13329539005997D1 /* lyricsFetcherStatus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lyricsFetcherStatus.png; sourceTree = "<group>"; };
+		FD4F84F81358CE37004D2C04 /* HTTPGETChartLyricsLyricsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPGETChartLyricsLyricsProvider.h; sourceTree = "<group>"; };
+		FD4F84F91358CE37004D2C04 /* HTTPGETChartLyricsLyricsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPGETChartLyricsLyricsProvider.m; sourceTree = "<group>"; };
 		FD62FA4F13329E5500E06A81 /* NSArray+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extensions.h"; sourceTree = "<group>"; };
 		FD62FA5013329E5500E06A81 /* NSArray+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extensions.m"; sourceTree = "<group>"; };
 		FD62FA5213329E7100E06A81 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
@@ -100,8 +102,6 @@
 		FD62FA5513329E7100E06A81 /* iTunesControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesControllerDelegate.h; sourceTree = "<group>"; };
 		FD62FA5613329E7100E06A81 /* TrackInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackInfo.h; sourceTree = "<group>"; };
 		FD62FA5713329E7100E06A81 /* TrackInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackInfo.m; sourceTree = "<group>"; };
-		FD62FA5A13329E9800E06A81 /* ChartLyricsLyricsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartLyricsLyricsProvider.h; sourceTree = "<group>"; };
-		FD62FA5B13329E9800E06A81 /* ChartLyricsLyricsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartLyricsLyricsProvider.m; sourceTree = "<group>"; };
 		FD62FA5C13329E9800E06A81 /* SearchLyricsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchLyricsResult.h; sourceTree = "<group>"; };
 		FD62FA5D13329E9800E06A81 /* SearchLyricsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchLyricsResult.m; sourceTree = "<group>"; };
 		FD62FA901334CD5400E06A81 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
@@ -301,10 +301,10 @@
 		FD20F7C913326F33005997D1 /* LyricsProvider */ = {
 			isa = PBXGroup;
 			children = (
-				FD62FA5A13329E9800E06A81 /* ChartLyricsLyricsProvider.h */,
-				FD62FA5B13329E9800E06A81 /* ChartLyricsLyricsProvider.m */,
 				FD62FA5C13329E9800E06A81 /* SearchLyricsResult.h */,
 				FD62FA5D13329E9800E06A81 /* SearchLyricsResult.m */,
+				FD4F84F81358CE37004D2C04 /* HTTPGETChartLyricsLyricsProvider.h */,
+				FD4F84F91358CE37004D2C04 /* HTTPGETChartLyricsLyricsProvider.m */,
 			);
 			name = LyricsProvider;
 			path = ..;
@@ -453,7 +453,6 @@
 				FD62FA5113329E5500E06A81 /* NSArray+Extensions.m in Sources */,
 				FD62FA5813329E7100E06A81 /* iTunesController.m in Sources */,
 				FD62FA5913329E7100E06A81 /* TrackInfo.m in Sources */,
-				FD62FA5E13329E9800E06A81 /* ChartLyricsLyricsProvider.m in Sources */,
 				FD62FA5F13329E9800E06A81 /* SearchLyricsResult.m in Sources */,
 				FD707251133A8F4D002E2AC7 /* LyricsFetcherAppDelegate+Actions.m in Sources */,
 				FD707254133A971D002E2AC7 /* OpenUrlAction.m in Sources */,
@@ -471,6 +470,7 @@
 				FD1CD7DB133FB04700D8464B /* NSAttributedString+Hyperlink.m in Sources */,
 				FD6BD7391343AB5B00725811 /* LyricsFetcherAppDelegate.m in Sources */,
 				FDCB29C513471B0A00F76A75 /* MainViewAnimator.m in Sources */,
+				FD4F84FA1358CE37004D2C04 /* HTTPGETChartLyricsLyricsProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +549,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;
@@ -566,7 +566,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;

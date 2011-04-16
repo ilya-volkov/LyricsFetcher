@@ -3,7 +3,7 @@
 #import "Action.h"
 
 @class PersistentStorageProvider;
-@class ChartLyricsLyricsProvider;
+@class HTTPGETChartLyricsLyricsProvider;
 @class iTunesController;
 @class TrackInfo;
 @class Settings;
@@ -42,7 +42,7 @@
 @property IBOutlet NSButton *toggleEditModeButton;
 @property IBOutlet NSProgressIndicator *lyricsLoadingProgress;
 
-@property ChartLyricsLyricsProvider *lyricsProvider;
+@property HTTPGETChartLyricsLyricsProvider *lyricsProvider;
 @property iTunesController *iTunes;
 @property TrackInfo *currentTrack;
 @property NSStatusItem *statusBarItem;
