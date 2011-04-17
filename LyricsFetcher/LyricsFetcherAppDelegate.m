@@ -221,6 +221,7 @@
 	if (self.statusBarItem != nil) {
 		[self.statusBarItem setMenu:self.menu];
 		[self.statusBarItem setImage:[NSImage imageNamed:@"lyricsFetcherStatus.png"]];
+        [self.statusBarItem setAlternateImage:[NSImage imageNamed:@"lyricsFetcherStatusAlternate.png"]];
 		[self.statusBarItem setHighlightMode:YES];
 	}
 }
