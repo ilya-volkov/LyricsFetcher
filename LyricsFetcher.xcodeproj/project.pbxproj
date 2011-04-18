@@ -40,8 +40,8 @@
 		FD707257133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = FD707256133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.m */; };
 		FD7CEC35135B307000063184 /* lyricsFetcherStatusAlternate.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7CEC34135B307000063184 /* lyricsFetcherStatusAlternate.png */; };
 		FD7CEC37135B307800063184 /* lyricsFetcherStatus.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7CEC36135B307800063184 /* lyricsFetcherStatus.png */; };
-		FD7CEC39135B44DF00063184 /* lyricsFetcher.icns in Resources */ = {isa = PBXBuildFile; fileRef = FD7CEC38135B44DF00063184 /* lyricsFetcher.icns */; };
-		FD7CEC3F135B48F700063184 /* lyricsFetcher128.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7CEC3E135B48F700063184 /* lyricsFetcher128.png */; };
+		FD96BEA0135CBFFB0057227D /* lyricsFetcher128.png in Resources */ = {isa = PBXBuildFile; fileRef = FD96BE9F135CBFFB0057227D /* lyricsFetcher128.png */; };
+		FD96BEA2135CC00C0057227D /* lyricsFetcher.icns in Resources */ = {isa = PBXBuildFile; fileRef = FD96BEA1135CC00C0057227D /* lyricsFetcher.icns */; };
 		FDBD324D1348E9C300CD3443 /* editModeTemplate.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBD324C1348E9C300CD3443 /* editModeTemplate.png */; };
 		FDCB29C513471B0A00F76A75 /* MainViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = FDCB29C413471B0900F76A75 /* MainViewAnimator.m */; };
 		FDCB29D51348C01E00F76A75 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDCB29D41348C01E00F76A75 /* Localizable.strings */; };
@@ -122,8 +122,8 @@
 		FD707256133A97CD002E2AC7 /* SearchTrackLyricsByGoogleAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTrackLyricsByGoogleAction.m; sourceTree = "<group>"; };
 		FD7CEC34135B307000063184 /* lyricsFetcherStatusAlternate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lyricsFetcherStatusAlternate.png; sourceTree = "<group>"; };
 		FD7CEC36135B307800063184 /* lyricsFetcherStatus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lyricsFetcherStatus.png; sourceTree = "<group>"; };
-		FD7CEC38135B44DF00063184 /* lyricsFetcher.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = lyricsFetcher.icns; sourceTree = "<group>"; };
-		FD7CEC3E135B48F700063184 /* lyricsFetcher128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lyricsFetcher128.png; sourceTree = "<group>"; };
+		FD96BE9F135CBFFB0057227D /* lyricsFetcher128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lyricsFetcher128.png; sourceTree = "<group>"; };
+		FD96BEA1135CC00C0057227D /* lyricsFetcher.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = lyricsFetcher.icns; sourceTree = "<group>"; };
 		FDBD324C1348E9C300CD3443 /* editModeTemplate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editModeTemplate.png; sourceTree = "<group>"; };
 		FDCB29C313471B0900F76A75 /* MainViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewAnimator.h; sourceTree = "<group>"; };
 		FDCB29C413471B0900F76A75 /* MainViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewAnimator.m; sourceTree = "<group>"; };
@@ -243,8 +243,8 @@
 		FD20F75E133154C0005997D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FD7CEC3E135B48F700063184 /* lyricsFetcher128.png */,
-				FD7CEC38135B44DF00063184 /* lyricsFetcher.icns */,
+				FD96BEA1135CC00C0057227D /* lyricsFetcher.icns */,
+				FD96BE9F135CBFFB0057227D /* lyricsFetcher128.png */,
 				FD7CEC36135B307800063184 /* lyricsFetcherStatus.png */,
 				FD7CEC34135B307000063184 /* lyricsFetcherStatusAlternate.png */,
 				FDBD324C1348E9C300CD3443 /* editModeTemplate.png */,
@@ -418,8 +418,8 @@
 				FDBD324D1348E9C300CD3443 /* editModeTemplate.png in Resources */,
 				FD7CEC35135B307000063184 /* lyricsFetcherStatusAlternate.png in Resources */,
 				FD7CEC37135B307800063184 /* lyricsFetcherStatus.png in Resources */,
-				FD7CEC39135B44DF00063184 /* lyricsFetcher.icns in Resources */,
-				FD7CEC3F135B48F700063184 /* lyricsFetcher128.png in Resources */,
+				FD96BEA0135CBFFB0057227D /* lyricsFetcher128.png in Resources */,
+				FD96BEA2135CC00C0057227D /* lyricsFetcher.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,7 +557,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;
@@ -574,7 +574,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;

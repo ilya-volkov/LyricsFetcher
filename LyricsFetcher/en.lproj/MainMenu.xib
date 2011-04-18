@@ -469,7 +469,7 @@
 											<reference key="NSDocView" ref="333863807"/>
 											<reference key="NSBGColor" ref="985685331"/>
 											<object class="NSCursor" key="NSCursor">
-												<string key="NSHotSpot">{4, 4}</string>
+												<string key="NSHotSpot">{1, -1}</string>
 												<int key="NSCursorType">0</int>
 											</object>
 											<int key="NScvFlags">4</int>
