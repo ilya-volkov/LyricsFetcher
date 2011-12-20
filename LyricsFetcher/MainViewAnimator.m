@@ -1,7 +1,18 @@
 #import "MainViewAnimator.h"
 
 
-@implementation MainViewAnimator
+@implementation MainViewAnimator {
+@private
+    NSView *suggestionView;
+    NSView *lyricsTextView;
+    NSView *editButtonsView;
+    CGFloat suggestionViewHeight;
+    CGFloat editButtonsViewHeight;
+    BOOL groupingMode;
+    NSRect suggestionFrame;
+    NSRect lyricsFrame;
+    NSRect editButtonsFrame;
+}
 
 @synthesize animationDuration;
 

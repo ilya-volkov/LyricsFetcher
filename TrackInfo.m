@@ -47,9 +47,6 @@
         self.album = [self handleNil:track.album];
         self.lyrics = [self handleNil:track.lyrics];
         
-        NSString *name = self.name;
-        NSString *artist = self.artist;
-        
         if ([[track artworks] count] > 0)
             self.artwork = [(iTunesArtwork*)[[track artworks] objectAtIndex:0] data];
                 
