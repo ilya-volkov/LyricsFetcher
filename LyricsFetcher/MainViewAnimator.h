@@ -1,18 +1,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface MainViewAnimator : NSObject {
-@private
-    NSView *suggestionView;
-    NSView *lyricsTextView;
-    NSView *editButtonsView;
-    CGFloat suggestionViewHeight;
-    CGFloat editButtonsViewHeight;
-    BOOL groupingMode;
-    NSRect suggestionFrame;
-    NSRect lyricsFrame;
-    NSRect editButtonsFrame;
-}
+@interface MainViewAnimator : NSObject
 
 + (MainViewAnimator*)animatorWithSuggestion:(NSView*)suggestion lyricsText:(NSView*)lyricsText editButtons:(NSView*)editButtons;
 
