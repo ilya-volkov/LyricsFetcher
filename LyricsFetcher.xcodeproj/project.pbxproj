@@ -387,6 +387,7 @@
 		FD20F74A133154C0005997D1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Apple Computer Inc";
 			};
 			buildConfigurationList = FD20F74D133154C0005997D1 /* Build configuration list for PBXProject "LyricsFetcher" */;
