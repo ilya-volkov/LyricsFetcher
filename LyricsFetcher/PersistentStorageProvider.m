@@ -1,6 +1,11 @@
 #import "PersistentStorageProvider.h"
 
-@implementation PersistentStorageProvider
+@implementation PersistentStorageProvider {
+@private
+    NSPersistentStoreCoordinator *persistentStoreCoordinator;
+    NSManagedObjectModel *managedObjectModel;
+    NSManagedObjectContext *managedObjectContext;
+}
 
 - (BOOL)existsEntity:(NSString*)name withId:(NSNumber*)id {
     NSError *error;

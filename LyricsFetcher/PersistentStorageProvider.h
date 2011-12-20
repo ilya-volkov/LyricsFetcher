@@ -1,11 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface PersistentStorageProvider : NSObject {
-@private
-    NSPersistentStoreCoordinator *persistentStoreCoordinator;
-    NSManagedObjectModel *managedObjectModel;
-    NSManagedObjectContext *managedObjectContext;
-}
+@interface PersistentStorageProvider : NSObject
 
 - (void)saveManagedObjectContext;
 - (void)wasDeclinedToAdd:(NSNumber*)id;
